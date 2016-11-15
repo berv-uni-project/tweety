@@ -1,0 +1,38 @@
+﻿
+@model Tweety.Models.TweetResult
+@{
+    ViewBag.Title = "ShowResult";
+}
+
+
+<h2>Result:</h2>
+<body>
+    <p>
+        <br />
+        @foreach (Tweety.Models.QueryCategory QQ in Model.Query)
+        {
+            
+            <p> <h3> @QQ.name </h3> <br>
+                Jumlah Tweet : <strong>@QQ.Tweet.Count</strong>
+                
+            </p>
+            foreach (Tweety.Models.HasilTweet TT in QQ.Tweet)
+            {
+                <table style="width:100%" cellpadding="4">
+                    <tr> <td>
+                    <p> <a href="http://twitter.com/@TT.TweetContent.CreatedBy.ScreenName"> <img src="@TT.TweetContent.CreatedBy.ProfileImageUrl" />  @TT.TweetContent.CreatedBy.Name </a>  </p>
+                    
+                    <p> @Html.Raw(@TT.result) </p>
+                    @for (int i = 0; i < TT.TweetContent.Entities.Medias.Count; i++)
+                    {
+                    <p> <img src="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL" /></p>
+                    }
+                    <p> <a href="@TT.TweetContent.Url">@TT.TweetContent.CreatedAt</a>  </p>
+                    </td>
+                        </tr>
+                </table>
+            }
+
+        }
+    </p>
+</body>

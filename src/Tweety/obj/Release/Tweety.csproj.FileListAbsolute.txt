@@ -1,0 +1,185 @@
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\ApplicationInsights.config
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\csc.exe
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\System.Collections.Immutable.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\System.Reflection.Metadata.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\vbc.exe
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\VBCSCompiler.exe
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\roslyn\VBCSCompiler.exe.config
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Tweety.dll.config
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Tweety.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Tweety.pdb
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Autofac.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.Agent.Intercept.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.DependencyCollector.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.Web.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.WindowsServer.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.ApplicationInsights.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.Threading.Tasks.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.Web.Infrastructure.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Newtonsoft.Json.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Net.Http.Extensions.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Net.Http.Primitives.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Helpers.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Mvc.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Razor.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Webpages.Deployment.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Webpages.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Webpages.Razor.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Tweetinvi.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Autofac.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.DependencyCollector.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.Web.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.AI.WindowsServer.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.ApplicationInsights.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.Threading.Tasks.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\Newtonsoft.Json.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Net.Http.Extensions.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Net.Http.Primitives.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Razor.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Webpages.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Webpages.Deployment.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Webpages.Razor.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Helpers.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\bin\System.Web.Mvc.xml
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\obj\Release\Tweety.csproj.App.config
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\obj\Release\Tweety.dll
+D:\01 Semester 4\Strategi Algoritma [IF2211]\Tugas\Tugas Besar 3\Tweety\Tweety\obj\Release\Tweety.pdb
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\ApplicationInsights.config
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\csc.exe
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\vbc.exe
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\VBCSCompiler.exe
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Tweety.dll.config
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Tweety.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Tweety.pdb
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Autofac.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.Web.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.Threading.Tasks.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Newtonsoft.Json.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Net.Http.Extensions.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Net.Http.Primitives.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Helpers.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Mvc.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Razor.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Webpages.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Webpages.Razor.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Tweetinvi.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Autofac.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.Web.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.Threading.Tasks.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\Newtonsoft.Json.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Net.Http.Extensions.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Net.Http.Primitives.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Razor.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Webpages.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Webpages.Razor.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Helpers.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\bin\System.Web.Mvc.xml
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\obj\Release\Tweety.csproj.App.config
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\obj\Release\Tweety.csprojResolveAssemblyReference.cache
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\obj\Release\Tweety.dll
+C:\Users\Bervianto Leo P\Documents\Projects\Tweety\Tweety\obj\Release\Tweety.pdb
+D:\Tweety\Tweety\bin\ApplicationInsights.config
+D:\Tweety\Tweety\bin\roslyn\csc.exe
+D:\Tweety\Tweety\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Tweety\Tweety\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Tweety\Tweety\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Tweety\Tweety\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Tweety\Tweety\bin\roslyn\System.Collections.Immutable.dll
+D:\Tweety\Tweety\bin\roslyn\System.Reflection.Metadata.dll
+D:\Tweety\Tweety\bin\roslyn\vbc.exe
+D:\Tweety\Tweety\bin\roslyn\VBCSCompiler.exe
+D:\Tweety\Tweety\bin\roslyn\VBCSCompiler.exe.config
+D:\Tweety\Tweety\bin\Tweety.dll.config
+D:\Tweety\Tweety\bin\Tweety.dll
+D:\Tweety\Tweety\bin\Tweety.pdb
+D:\Tweety\Tweety\bin\Autofac.dll
+D:\Tweety\Tweety\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Tweety\Tweety\bin\Microsoft.AI.DependencyCollector.dll
+D:\Tweety\Tweety\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Tweety\Tweety\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Tweety\Tweety\bin\Microsoft.AI.Web.dll
+D:\Tweety\Tweety\bin\Microsoft.AI.WindowsServer.dll
+D:\Tweety\Tweety\bin\Microsoft.ApplicationInsights.dll
+D:\Tweety\Tweety\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Tweety\Tweety\bin\Microsoft.Threading.Tasks.dll
+D:\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Tweety\Tweety\bin\Microsoft.Web.Infrastructure.dll
+D:\Tweety\Tweety\bin\Newtonsoft.Json.dll
+D:\Tweety\Tweety\bin\System.Net.Http.Extensions.dll
+D:\Tweety\Tweety\bin\System.Net.Http.Primitives.dll
+D:\Tweety\Tweety\bin\System.Web.Helpers.dll
+D:\Tweety\Tweety\bin\System.Web.Mvc.dll
+D:\Tweety\Tweety\bin\System.Web.Razor.dll
+D:\Tweety\Tweety\bin\System.Web.Webpages.Deployment.dll
+D:\Tweety\Tweety\bin\System.Web.Webpages.dll
+D:\Tweety\Tweety\bin\System.Web.Webpages.Razor.dll
+D:\Tweety\Tweety\bin\Tweetinvi.dll
+D:\Tweety\Tweety\bin\Autofac.xml
+D:\Tweety\Tweety\bin\Microsoft.AI.DependencyCollector.xml
+D:\Tweety\Tweety\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Tweety\Tweety\bin\Microsoft.AI.Web.xml
+D:\Tweety\Tweety\bin\Microsoft.AI.WindowsServer.xml
+D:\Tweety\Tweety\bin\Microsoft.ApplicationInsights.xml
+D:\Tweety\Tweety\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Tweety\Tweety\bin\Microsoft.Threading.Tasks.xml
+D:\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Tweety\Tweety\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\Tweety\Tweety\bin\Newtonsoft.Json.xml
+D:\Tweety\Tweety\bin\System.Net.Http.Extensions.xml
+D:\Tweety\Tweety\bin\System.Net.Http.Primitives.xml
+D:\Tweety\Tweety\bin\System.Web.Razor.xml
+D:\Tweety\Tweety\bin\System.Web.Webpages.xml
+D:\Tweety\Tweety\bin\System.Web.Webpages.Deployment.xml
+D:\Tweety\Tweety\bin\System.Web.Webpages.Razor.xml
+D:\Tweety\Tweety\bin\System.Web.Helpers.xml
+D:\Tweety\Tweety\bin\System.Web.Mvc.xml
+D:\Tweety\Tweety\obj\Release\Tweety.csproj.App.config
+D:\Tweety\Tweety\obj\Release\Tweety.csprojResolveAssemblyReference.cache
+D:\Tweety\Tweety\obj\Release\Tweety.dll
+D:\Tweety\Tweety\obj\Release\Tweety.pdb

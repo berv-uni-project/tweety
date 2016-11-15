@@ -1,0 +1,68 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+select,
+textarea {
+    max-width: 280px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid dodgerblue;
+}
+
+input[type=text]:focus {
+    width: 80%;
+    border-bottom: 2px solid dodgerblue;
+}
+
+button[type=submit] {
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 16px 96px;
+    border-radius: 4px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+h2 {
+    color: dodgerblue;
+}
+
+.navbar-brand {
+    color : white;
+}
+
+form {
+    margin: 0 auto;
+    width: 500px;
+}
+
+p.head {
+    border-style: solid;
+    border-bottom: thick #ff0000;
+}
+
+th, td {
+    padding: 20px;
+    border: 1px solid #1f7add;
+    border-radius: 10px;
+}
+
+tr:nth-last-column(even) {
+    background-color:blue;
+}
+table {
+    border-collapse:collapse;
+}
