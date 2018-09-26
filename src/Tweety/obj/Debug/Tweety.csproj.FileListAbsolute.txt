@@ -243,7 +243,6 @@ C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\bin\System.Web.Webpages.Ra
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\bin\System.Web.Helpers.xml
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\bin\System.Web.Mvc.xml
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.csproj.App.config
-C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.csprojAssemblyReference.cache
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.csproj.CoreCompileInputs.cache
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.csproj.CopyComplete
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.dll
