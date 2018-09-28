@@ -3,6 +3,8 @@ Tweety, Twitter Tweet Categorizer. Using KMP and Boyer Moore Algorithm that find
 
 # About App
 
+![Main Screen](./content/main-screen.png)
+
 This app build with C# and ASP.NET.
 
 This app using Twitter API, so you must have token key.
