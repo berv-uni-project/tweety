@@ -109,6 +109,7 @@ namespace TweetyCore.Controllers
 
             QueryCategory NoCategory = new QueryCategory
             {
+                Id="no_category",
                 Name = "No Category"
             };
             var tweets = Search.SearchTweets(searchParameter);

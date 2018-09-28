@@ -5,28 +5,50 @@
 
 <center><h2>Search Tweet</h2></center>
 
-<div class="container">
-    <div class="row">
-        @using (Html.BeginForm())
-        {
-            @Html.Label("Search to Twitter : ") <br />
-            @Html.TextBoxFor(model => model.Name, null, new { @class = "form-control" }) <br />
-            @Html.Label("Query Dinas Kesehatan : ") <br />
-            @Html.TextBoxFor(model => model.DinasKesehatan, null, new { @class = "form-control" }) <br />
-            @Html.Label("Query Dinas Sosial : ") <br />
-            @Html.TextBoxFor(model => model.DinasSosial, null, new { @class = "form-control" }) <br />
-            @Html.Label("Query Dinas Pendidikan : ") <br />
-            @Html.TextBoxFor(model => model.DinasPendidikan, null, new { @class = "form-control" }) <br />
-            @Html.Label("Query Dinas Binamarga & Pengairan : ") <br />
-            @Html.TextBoxFor(model => model.DinasBinamarga, null, new { @class = "form-control" }) <br />
-            @Html.Label("Query Dinas Pemuda & Olahraga : ") <br />
-            @Html.TextBoxFor(model => model.DinasPemuda, null, new { @class = "form-control" }) <br />
-            @Html.Label("Select Method : ") <br />
-            @Html.RadioButtonFor(model => model.isKMP, true)
-            @Html.Label("KMP") <br />
-            @Html.RadioButtonFor(model => model.isKMP, false)
-            @Html.Label("Boyer-Moore") <br />
-            <button type="submit" class="btn btn-primary">Cari</button>
-        }
+@using (Html.BeginForm())
+{
+    <div class="input-field">
+        @Html.TextBoxFor(model => model.Name)
+        @Html.LabelFor(model => model.Name, "Search to Twitter")
     </div>
-</div>
+    <div class="row">
+        <div class="input-field col s6">
+            @Html.TextBoxFor(model => model.DinasKesehatan, null)
+            @Html.LabelFor(model => model.DinasKesehatan, "Query Dinas Kesehatan")
+        </div>
+        <div class="input-field col s6">
+            @Html.TextBoxFor(model => model.DinasSosial, null)
+            @Html.LabelFor(model => model.DinasSosial, "Query Dinas Sosial")
+        </div>
+        <div class="input-field col s6">
+            @Html.TextBoxFor(model => model.DinasPendidikan, null)
+            @Html.LabelFor(model => model.DinasPendidikan, "Query Dinas Pendidikan")
+        </div>
+        <div class="input-field col s6">
+            @Html.TextBoxFor(model => model.DinasBinamarga, null)
+            @Html.LabelFor(model => model.DinasBinamarga, "Query Dinas Binamarga & Pengairan")
+        </div>
+        <div class="input-field col s6">
+            @Html.TextBoxFor(model => model.DinasPemuda, null)
+            @Html.LabelFor(model => model.DinasPemuda, "Query Dinas Pemuda & Olahraga")
+        </div>
+    </div>
+    <div class="row">
+        @Html.Label("Select Method : ") <br />
+        <p>
+            <label>
+                @Html.RadioButtonFor(model => model.isKMP, true)
+                <span>KMP</span>
+            </label>
+        </p>
+        <p>
+            <label>
+                @Html.RadioButtonFor(model => model.isKMP, false)
+                <span>Booyer-Moore</span>
+            </label>
+        </p>
+    </div>
+    <div class="row">
+        <button type="submit" class="btn">Cari</button>
+    </div>
+}
