@@ -7,17 +7,17 @@ namespace Tweety.Models
 {
     public class QueryCategory
     {
-        public string id;
-        public string name;
-        public List<HasilTweet> Tweet;
-        public int num;
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public int Num { get; set; }
+        public List<HasilTweet> Tweet { get; set; }
 
         public QueryCategory()
         {
-            id = "";
-            name = "";
+            Id = "";
+            Name = "";
             Tweet = new List<HasilTweet>();
-            num = 0;
+            Num = 0;
         }
 
     }

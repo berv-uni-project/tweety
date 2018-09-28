@@ -204,7 +204,7 @@
     <Content Include="Views\TweetyForm\SearchForm.cshtml" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Result\ShowResult.cshtml" />
-    <Content Include="Views\TweetyForm\About.cshtml" />
+    <Content Include="Views\About\About.cshtml" />
     <Content Include="Views\Result\NoResult.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -215,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\About\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

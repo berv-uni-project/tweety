@@ -8,7 +8,7 @@ using System.IO;
 using Tweetinvi.Core.Authentication;
 using Tweetinvi.Core.Extensions;
 using Tweetinvi.Core.Interfaces;
-using StringMatching;
+using Utils.StringMatching;
 
 namespace Tweety.Controllers
 {
@@ -29,33 +29,33 @@ namespace Tweety.Controllers
                 TweetResult Ax = new TweetResult();
                 Ax.Query = new List<QueryCategory>();
                 QueryCategory Ay = new QueryCategory();
-                Ay.id = tag.DinasKesehatan;
-                Ay.name = "Dinas Kesehatan";
-                Ay.num = 0;
+                Ay.Id = tag.DinasKesehatan;
+                Ay.Name = "Dinas Kesehatan";
+                Ay.Num = 0;
                 Ay.Tweet = new List<HasilTweet>();
                 Ax.Query.Add(Ay);
                 Ay = new QueryCategory();
-                Ay.id = tag.DinasBinamarga;
-                Ay.name = "Dinas Binamarga";
-                Ay.num = 0;
+                Ay.Id = tag.DinasBinamarga;
+                Ay.Name = "Dinas Binamarga";
+                Ay.Num = 0;
                 Ay.Tweet = new List<HasilTweet>();
                 Ax.Query.Add(Ay);
                 Ay = new QueryCategory();
-                Ay.id = tag.DinasPemuda;
-                Ay.name = "Dinas Pemuda";
-                Ay.num = 0;
+                Ay.Id = tag.DinasPemuda;
+                Ay.Name = "Dinas Pemuda";
+                Ay.Num = 0;
                 Ay.Tweet = new List<HasilTweet>();
                 Ax.Query.Add(Ay);
                 Ay = new QueryCategory();
-                Ay.id = tag.DinasPendidikan;
-                Ay.name = "Dinas Pendidikan";
-                Ay.num = 0;
+                Ay.Id = tag.DinasPendidikan;
+                Ay.Name = "Dinas Pendidikan";
+                Ay.Num = 0;
                 Ay.Tweet = new List<HasilTweet>();
                 Ax.Query.Add(Ay);
                 Ay = new QueryCategory();
-                Ay.id = tag.DinasSosial;
-                Ay.name = "Dinas Sosial";
-                Ay.num = 0;
+                Ay.Id = tag.DinasSosial;
+                Ay.Name = "Dinas Sosial";
+                Ay.Num = 0;
                 Ay.Tweet = new List<HasilTweet>();
                 Ax.Query.Add(Ay);
                 ParseTag(tag, Ax);
@@ -98,7 +98,7 @@ namespace Tweety.Controllers
             try
             {
                 QueryCategory NoCategory = new QueryCategory();
-                NoCategory.name = "No Category";
+                NoCategory.Name = "No Category";
                 var tweets = Search.SearchTweets(searchParameter);
                 if (tweets != null)
                 {
@@ -111,7 +111,7 @@ namespace Tweety.Controllers
                     }
                     foreach(QueryCategory value in Tweetx.Query)
                     {
-                        GetQuery(value.id, Tweet, value, ref NoCate, tag);
+                        GetQuery(value.Id, Tweet, value, ref NoCate, tag);
                     }
                     for (int g = 0; g < jumlahtweetygdidapat; g++) {
                         if (!NoCate[g])
@@ -186,11 +186,11 @@ namespace Tweety.Controllers
                         }
                         if (tag.isKMP)
                         {
-                            X = KMP.solve(Tweet[j].Text, querySearch);
+                            X = KMP.Solve(Tweet[j].Text, querySearch);
                         }
                         else
                         {
-                            X = Booyer.solve(Tweet[j].Text, querySearch);
+                            X = Booyer.Solve(Tweet[j].Text, querySearch);
                         }
                         thequery = querySearch;
                         q.Add(X);
@@ -215,7 +215,7 @@ namespace Tweety.Controllers
                         }
                         Ax.TweetContent = Tweet[j];
                         A.Tweet.Add(Ax);
-                        A.num++;
+                        A.Num++;
                         Ax.result = Ax.TweetContent.Text;
                         foreach (int pos in Ax.StartMark) {
                             if (pos != -1)

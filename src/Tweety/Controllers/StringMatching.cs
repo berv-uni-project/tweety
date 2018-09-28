@@ -1,47 +1,47 @@
 ﻿using System;
 
-namespace StringMatching
+namespace Utils.StringMatching
 {
 	class KMP
 	{
 		private static string input; //string for searching
 		private static string keyword; //the keyword to find
-		private static int[] borderfunction;
+		private static int[] borderFunction;
 
-		private static void initBorderFunction() {
+		private static void InitBorderFunction() {
 			//border function algorithm
 			int size =  keyword.Length;
-			borderfunction = new int[size+1];
+			borderFunction = new int[size+1];
 
 			int j = 0;
 			int i = 1;
 			while (i < size) {
 				if (keyword [j] == keyword [i]) {
-					borderfunction [i+1] = j + 1;
+					borderFunction [i+1] = j + 1;
 					i++;
 					j++;
 				} else if (j > 0) {
-					j = borderfunction[j];
+					j = borderFunction[j];
 				} else {
-					borderfunction [i+1] = 0;
+					borderFunction [i+1] = 0;
 					i++;
 				}
 			}
 
 		}
 			
-		public static int solve(string _input,string _keyword) {
+		public static int Solve(string _input,string _keyword) {
 			if (_input.Length == 0) {
-				Console.WriteLine ("Please set your input");
+				// Console.WriteLine ("Please set your input");
 				return -2;
 			} else if (_keyword.Length == 0) {
-				Console.WriteLine ("Please set your keyword");
+				// Console.WriteLine ("Please set your keyword");
 				return -3;
 			} else {
 				input = _input.ToLower();
 				keyword = _keyword.ToLower();
 				//init borderfunction
-				initBorderFunction();
+				InitBorderFunction();
 
 				//progress to solving
 				int n = input.Length;
@@ -58,7 +58,7 @@ namespace StringMatching
 						i++;
 						j++;
 					} else if (j > 0) {
-						j = borderfunction[j];
+						j = borderFunction[j];
 					} else {
 						i++;
 					}
@@ -86,7 +86,7 @@ namespace StringMatching
 		private static int[] last;
         private const int maxEmoticon = 128;
 
-		private static void initLast(string _keyword) {
+		private static void InitLast(string _keyword) {
 			last = new int[maxEmoticon];
 
 			for (int i = 0; i < maxEmoticon; i++) {
@@ -98,10 +98,10 @@ namespace StringMatching
 			}
 		}
 
-		public static int solve(string _input, string _keyword) {
+		public static int Solve(string _input, string _keyword) {
 			input = _input.ToLower();
 			keyword = _keyword.ToLower();
-            initLast(keyword);
+            InitLast(keyword);
             int n = input.Length;
 			int m = keyword.Length;
 			int i = m - 1;
@@ -135,15 +135,14 @@ namespace StringMatching
 
 			return -1; //no match
 		}
-
+        /*
 		public static void Main (string[] args) {
-			int posn = Booyer.solve ("Test is the best test.", "best");
+			int posn = Booyer.Solve ("Test is the best test.", "best");
 			if (posn == -1) {
 				Console.WriteLine ("Pattern not found");
 			} else {
 				Console.WriteLine ("Pattern starts at posn {0}", posn);
 			}
-		}
-
+		}*/
 	}
 }

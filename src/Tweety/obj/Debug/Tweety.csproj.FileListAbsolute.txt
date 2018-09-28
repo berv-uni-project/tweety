@@ -247,3 +247,4 @@ C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.csproj.Co
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.csproj.CopyComplete
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.dll
 C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.pdb
+C:\Users\bervianto\Documents\GitHub\tweety\src\Tweety\obj\Debug\Tweety.csprojAssemblyReference.cache
