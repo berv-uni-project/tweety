@@ -1,6 +1,7 @@
 # Tweety
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c130ac1728cd4caa94c8a0213a105336)](https://app.codacy.com/app/berviantoleo/tweety?utm_source=github.com&utm_medium=referral&utm_content=berv-uni-project/tweety&utm_campaign=Badge_Grade_Settings)
+[![Build Status](https://travis-ci.org/berv-uni-project/tweety.svg?branch=master)](https://travis-ci.org/berv-uni-project/tweety)
 
 Tweety, Twitter Tweet Categorizer. Using KMP and Boyer Moore Algorithm that find matching string.
 
