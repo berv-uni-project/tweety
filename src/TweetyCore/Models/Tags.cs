@@ -11,8 +11,7 @@ namespace Tweety.Models
         public string DinasPendidikan{ set; get; }
         public string DinasBinamarga{ set; get; }
         public string DinasPemuda { set; get; }
-
         [Required(ErrorMessage = "Required")]
-        public bool isKMP { set; get; }
+        public bool IsKMP { set; get; }
     }
 }

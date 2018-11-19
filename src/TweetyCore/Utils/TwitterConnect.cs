@@ -6,6 +6,7 @@ using Tweetinvi;
 using Tweetinvi.Core.Extensions;
 using Tweetinvi.Models;
 using Tweety.Models;
+using TweetyCore.Models;
 using Utils.StringMatching;
 
 namespace TweetyCore.Utils
@@ -87,10 +88,12 @@ namespace TweetyCore.Utils
             Auth.ApplicationCredentials = new TwitterCredentials(customer_key, customer_secret, token, token_secret);
         }
 
-        public Tuple<int, TweetResult> ProcessTag(Tags tags)
+        public TweetResponse ProcessTag(Tags tags)
         {
             int sumOfTweets = ParseTag(tags);
-            return Tuple.Create(sumOfTweets, tweetResults);
+            return new TweetResponse(){ Count = sumOfTweets,
+                Data = tweetResults
+            };
         }
 
         private int ParseTag(Tags tag)
@@ -132,9 +135,9 @@ namespace TweetyCore.Utils
                     {
                         keywords = tag.DinasSosial;
                     }
-                    if (keywords != "")
+                    if (keywords != null && keywords != "")
                     {
-                        GetQuery(category, tweets, keywords, tag.isKMP);
+                        GetQuery(category, tweets, keywords, tag.IsKMP);
                     }
                 }
                 for (int j = 0; j < sumOfTweet; j++)

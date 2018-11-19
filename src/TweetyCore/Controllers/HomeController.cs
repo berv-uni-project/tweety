@@ -25,11 +25,11 @@ namespace TweetyCore.Controllers
             if (ModelState.IsValid)
             {
                 TwitterConnect twitterConnect = new TwitterConnect();
-                var result = twitterConnect.ProcessTag(tags);
+                TweetResponse result = twitterConnect.ProcessTag(tags);
 
-                if (result.Item1 > 0)
+                if (result.Count > 0)
                 {
-                    return View("ShowResult", result.Item2);
+                    return View("ShowResult", result.Data);
                 }
                 else
                 {
