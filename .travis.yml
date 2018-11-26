@@ -4,7 +4,7 @@ matrix:
       mono: none
       dotnet: 2.1
       script:
-        - cd src/TweetyMVC
+        - cd $TRAVIS_BUILD_DIR/src/TweetyMVC
         - dotnet restore
         - dotnet build
         - dotnet publish
@@ -12,8 +12,9 @@ matrix:
       node_js:
         - "10"
       before_script:
+        - cd $TRAVIS_BUILD_DIR/src/tweety-ui
         - npm install
       script:
-        - cd src/tweety-ui
+        - cd $TRAVIS_BUILD_DIR/src/tweety-ui
         - npm run lint
         - npm run build
