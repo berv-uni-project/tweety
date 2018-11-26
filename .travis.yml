@@ -1,8 +1,17 @@
-language: csharp
-mono: none
-dotnet: 2.1
-script:
- - cd src/TweetyMVC
- - dotnet restore
- - dotnet build
- - dotnet publish
+matrix:
+  include:
+    - language: csharp
+      mono: none
+      dotnet: 2.1
+      script:
+        - cd src/TweetyMVC
+        - dotnet restore
+        - dotnet build
+        - dotnet publish
+    - language: node_js
+      node_js:
+        - "10"
+      script:
+        - cd src/tweety-ui
+        - npm run lint
+        - npm run build
