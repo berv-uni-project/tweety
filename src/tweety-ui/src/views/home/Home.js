@@ -20,25 +20,12 @@ export default {
         query: []
       },
       isLoading: false,
-      isForm: true
+      activeTab: 0
     };
   },
   components: {
     "home-form": HomeForm,
     "home-result": HomeResult
-  },
-  mounted() {
-    this.isForm = true;
-  },
-  watch: {
-    $route() {
-      if (this.$route.query.result) {
-        this.isForm = false;
-      } else {
-        this.isForm = true;
-      }
-      console.log(this.isForm);
-    }
   },
   methods: {
     submitData() {
@@ -71,7 +58,7 @@ export default {
                 });
                 this.result.count = response.data.result.count;
                 this.result.query = response.data.result.data.query;
-                this.$router.push({ query: { result: true } });
+                this.activeTab = 1;
               } else {
                 this.$toast.open({
                   message: "Form is not valid! Please check the fields.",

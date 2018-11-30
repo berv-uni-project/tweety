@@ -1,8 +1,14 @@
 <template>
   <div>
     <b-loading :is-full-page="true" :active.sync="isLoading" :can-cancel="false"></b-loading>
-    <home-form v-if="isForm" :form="form" :submitData="submitData"></home-form>
-    <home-result v-else :result="result"></home-result>
+    <b-tabs v-model="activeTab" position="is-centered">
+      <b-tab-item label="Search">
+        <home-form :form="form" :submitData="submitData"></home-form>
+      </b-tab-item>
+      <b-tab-item label='Result'>
+        <home-result :result="result"></home-result>  
+      </b-tab-item>
+    </b-tabs>
   </div>
 </template>
 

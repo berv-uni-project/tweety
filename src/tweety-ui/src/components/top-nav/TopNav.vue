@@ -2,7 +2,7 @@
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link class="navbar-item" to="/">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+        <h1 class="title">Tweety</h1>
       </router-link>
 
       <a
