@@ -30,8 +30,7 @@ namespace TweetyCore
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -48,10 +47,11 @@ namespace TweetyCore
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.WithOrigins("https://berv-uni-project.github.io").AllowAnyHeader());
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
