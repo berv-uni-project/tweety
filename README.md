@@ -5,6 +5,11 @@
 
 Tweety, Twitter Tweet Categorizer. Using KMP and Boyer Moore Algorithm that find matching string.
 
+Demo:
+
+* [MVC](https://tweetycore.azurewebsites.net/)
+* [Vue](https://berv-uni-project.github.io/tweety/)
+
 # About App
 
 ![Main Screen](./content/main-screen.png)
