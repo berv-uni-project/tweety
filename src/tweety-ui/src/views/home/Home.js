@@ -1,6 +1,7 @@
 import axios from "axios";
 import HomeForm from "@/components/home-form/HomeForm.vue";
 import HomeResult from "@/components/home-result/HomeResult.vue";
+import services from "@/services/index.js";
 
 export default {
   name: "home",
@@ -34,7 +35,7 @@ export default {
           this.isLoading = true;
           axios
             .post(
-              "http://localhost:50608/api/v1/tweety/find",
+              services.search,
               {
                 Name: this.form.search,
                 DinasKesehatan: this.form.dinkes.join(","),
