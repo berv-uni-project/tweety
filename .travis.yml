@@ -2,7 +2,7 @@ matrix:
   include:
     - language: csharp
       mono: none
-      dotnet: 2.1
+      dotnet: 2.2
       script:
         - cd $TRAVIS_BUILD_DIR/src/TweetyMVC
         - dotnet restore
