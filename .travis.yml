@@ -1,31 +1,12 @@
-matrix:
-  include:
-    - language: csharp
-      mono: none
-      dotnet: 2.2
-      dist: xenial
-      script:
-        - cd $TRAVIS_BUILD_DIR/src/TweetyMVC
-        - dotnet restore
-        - dotnet build
-        - dotnet publish
-    - language: node_js
-      node_js:
-        - "10"
-      before_script:
-        - cd $TRAVIS_BUILD_DIR/src/tweety-ui
-        - npm install
-      script:
-        - cd $TRAVIS_BUILD_DIR/src/tweety-ui
-        - npm run lint
-        - npm run build
-      deploy:
-        provider: pages
-        skip-cleanup: true
-        local_dir: src/tweety-ui/dist
-        github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-        keep-history: true
-        target-branch: gh-pages
-        committer-from-gh: true
-        on:
-          branch: master
+language: csharp
+
+mono: none
+
+dotnet: 2.2
+
+dist: xenial
+
+script:
+  - dotnet restore
+  - dotnet build
+  - dotnet publish 
