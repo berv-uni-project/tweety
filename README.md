@@ -28,6 +28,17 @@ Youtube Review (v0.1) : https://www.youtube.com/watch?v=uGtZCm9duLw
 
 * You can deploy to Azure (read the documentation) to deploy ASP .NET Core MVC (v0.2 or above).
 
+### Use Docker
+
+You can use `docker-compose.yml` and provide environment like this:
+
+```env
+CUSTOMER_KEY=...
+CUSTOMER_SECRET=...
+TOKEN=...
+TOKEN_SECRET=...
+```
+
 ## Created By
 
 1. [Bervianto Leo Pratama](https://github.com/berviantoleo)
