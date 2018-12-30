@@ -2,7 +2,7 @@
 
 namespace Utils.StringMatching
 {
-	class KMP
+	public static class KMP
 	{
 		private static string input; //string for searching
 		private static string keyword; //the keyword to find
@@ -76,20 +76,9 @@ namespace Utils.StringMatching
 				return -1;
 			}
 		}
-		/*
-		public static void Main (string[] args)
-		{
-			int posn = KMP.solve ("Ini hanya sebuah tester","test");
-			//posisi dari 0
-			if (posn == -1) {
-				Console.WriteLine ("Pattern not found");
-			} else {
-				Console.WriteLine ("Pattern found at posn {0}", posn);
-			}
-		}*/
 	}
 
-	class Booyer
+	public static class Booyer
 	{
 		private static string input;
 		private static string keyword;
@@ -111,11 +100,11 @@ namespace Utils.StringMatching
 			}
 		}
 
-		public static int Solve (string _input, string _keyword)
+		public static int Solve(string _input, string _keyword)
 		{
-			input = _input.ToLower ();
-			keyword = _keyword.ToLower ();
-			InitLast (keyword);
+			input = _input.ToLower();
+			keyword = _keyword.ToLower();
+			InitLast(keyword);
 			int n = input.Length;
 			int m = keyword.Length;
 			int i = m - 1;
@@ -153,15 +142,5 @@ namespace Utils.StringMatching
 
 			return -1; //no match
 		}
-		/*
-		public static void Main (string[] args) {
-			int posn = Booyer.Solve ("Test is the best test.", "best");
-			if (posn == -1) {
-				Console.WriteLine ("Pattern not found");
-			} else {
-				Console.WriteLine ("Pattern starts at posn {0}", posn);
-			}
-		}*/
-
 	}
 }

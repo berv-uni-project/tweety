@@ -35,7 +35,6 @@ namespace TweetyCore.Controllers
                 {
                     return View("NoResult");
                 };
-
             }
             return View();
         }
