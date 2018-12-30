@@ -5,58 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TweetyCore</title>
     <link rel="icon" href="~/images/Tweety.jpg" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/materialize/css/materialize.css" media="screen,projection" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" media="screen,projection" href="~/lib/materialize/css/materialize.min.css" />
-    </environment>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
 </head>
-<body>
-    <div class="navbar-fixed">
-        <nav class="deep-orange">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="brand-logo"><img src="~/images/Tweety.jpg" alt="Tweety" width="50" height="50" /></a>
-                    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    </ul>
+<body class="has-navbar-fixed-top">
+    <header class="navbar-fixed">
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            
+            <div class="navbar-brand">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">
+                    <figure class="image is-32x32">
+                        <img src="~/images/Tweety.jpg" alt="Tweety" />
+                    </figure>
+                </a>
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            
+
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">Home</a>
+                    <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-item">About</a>
                 </div>
             </div>
         </nav>
-    </div>
-
-    <ul id="nav-mobile" class="sidenav">
-        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-    </ul>
-
+    </header>
+    <!--
     <partial name="_CookieConsentPartial" />
-
-    <div class="container">
-        @RenderBody()
-    </div>
-
-    <footer class="page-footer deep-orange lighten-1">
-        <div class="footer-copyright deep-orange">
-            <div class="container">
-                <p>&copy; 2018 - Tweety</p>
-            </div>
+    -->
+    <section class="section">
+        <div id="app" class="container">
+            @RenderBody()
         </div>
+    </section>
+
+    <footer class="footer">
+            <div class="content has-text-centered">
+                <p>&copy; 2018 - Tweety - <b>Bervianto Leo Pratama</b></p>
+            </div>
     </footer>
 
-
     <environment include="Development">
-        <script src="~/lib/materialize/js/materialize.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="https://unpkg.com/vue"></script>
     </environment>
     <environment exclude="Development">
-        <script src="~/lib/materialize/js/materialize.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="https://unpkg.com/vue.min.js"></script>
     </environment>
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <script src="~/js/site.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

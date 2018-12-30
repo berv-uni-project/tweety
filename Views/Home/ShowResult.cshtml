@@ -7,43 +7,45 @@
 
 <div class="card">
     <div class="card-content">
-        <h2>Result</h2>
+        <h2 class="title">Result</h2>
     </div>
-    <div class="card-tabs">
-        <ul class="tabs tabs-fixed-width">
-            @foreach (Tweety.Models.QueryCategory QQ in Model.Query)
-            {
-                <li class="tab"><a href="#@QQ.Id">@QQ.Name</a></li>
-            }
-        </ul>
-    </div>
-
-    <div class="card-content">
+    <b-tabs position="is-centered" class="block">
         @foreach (Tweety.Models.QueryCategory QQ in Model.Query)
-        {
-            <div id="@QQ.Id">
-                <h3> @QQ.Name </h3> <br>
-                <p>
-                    Jumlah Tweet : <strong>@QQ.Tweet.Count</strong>
-                </p>
-                @foreach (Tweety.Models.HasilTweet TT in QQ.Tweet)
-                {
-                    <ul class="collection">
-                        <li class="collection-item avatar">
-                            <a href="http://twitter.com/@TT.TweetContent.CreatedBy.ScreenName"> <img src="@TT.TweetContent.CreatedBy.ProfileImageUrl" class="circle" /> </a>
-                            <span class="title">
-                                <a href="http://twitter.com/@TT.TweetContent.CreatedBy.ScreenName"> @TT.TweetContent.CreatedBy.Name </a>
-                            </span>
-                            <p> @Html.Raw(@TT.Result) </p>
-                            @for (int i = 0; i < TT.TweetContent.Entities.Medias.Count; i++)
-                            {
-                                <img src="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL" class="materialboxed" width="100" height="100" />
-                            }
-                            <p> <a href="@TT.TweetContent.Url">@TT.TweetContent.CreatedAt</a>  </p>
-                        </li>
-                    </ul>
-                }
-            </div>
-        }
-    </div>
+            {
+                <b-tab-item label="@QQ.Name">
+                    <div id="@QQ.Id">
+                        <h3 class="title">@QQ.Name</h3>
+                        <p class="subtitle">
+                            Jumlah Tweet : <strong>@QQ.Tweet.Count</strong>
+                        </p>
+                        @foreach (Tweety.Models.HasilTweet TT in QQ.Tweet)
+                        {
+                            <div class="box">
+                                <div class="media">
+                                    <figure class="media-left">
+                                        <a href="http://twitter.com/@TT.TweetContent.CreatedBy.ScreenName">
+                                            <img src="@TT.TweetContent.CreatedBy.ProfileImageUrl" class="circle" />
+                                        </a>
+                                    </figure>
+                                    <div class="media-content">
+                                        <span class="title">
+                                        <a href="http://twitter.com/@TT.TweetContent.CreatedBy.ScreenName"> @TT.TweetContent.CreatedBy.Name </a>
+                                    </span>
+                                    <p> @Html.Raw(@TT.Result) </p>
+                                    @for (int i = 0; i < TT.TweetContent.Entities.Medias.Count; i++)
+                                    {   <a href="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL">
+                                        <img src="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL" class="materialboxed" width="100" height="100" />
+                                        </a>
+                                    }
+                                    <p> <a href="@TT.TweetContent.Url">@TT.TweetContent.CreatedAt</a>  </p>
+                                    </div>
+                                </div>
+                                    
+                                    
+                            </div>
+                        }
+                    </div>
+                </b-tab-item>
+            }
+    </b-tabs>
 </div>

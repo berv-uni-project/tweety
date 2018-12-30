@@ -2,47 +2,64 @@
 @{
     ViewBag.Title = "About";
 }
-
-<h2>About Tweety</h2>
-<div class="row">
-    <img src='~/images/TweetyIcon.png' alt="Logo" class="responsive-img" />
-    <p>
+<div class="content has-text-centered">
+<h2 class="title">About Tweety</h2>
+<div class="columns">
+    <div class="column is-one-fifth">
+        <img src='~/images/TweetyIcon.png' alt="Logo" />
+    </div>
+        
+    <div class="column">
         Aplikasi ini dibuat untuk mencari tweet dengan query tertentu dan mengkategorikannya
-    </p>
-</div>
-
-<h3>Created by : </h3>
-<br />
-<div class="row">
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <img src='~/images/Jeje.jpg' class="responsive-img" alt="Jeje" />
-            </div>
-            <div class="card-content">
-                Jeremia Jason Lasiman - 13514021
-            </div>
-        </div>
-    </div>
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <img src='~/images/Bervi.jpg' class="responsive-img" alt="Bervi" />
-            </div>
-            <div class="card-content">
-                Bervianto Leo Pratama - 13514047
-            </div>
-        </div>
-    </div>
-    <div class="col s4">
-        <div class="card">
-            <div class="card-image">
-                <img src='~/images/Zahid.jpg' class="responsive-img" alt="Zahid" />
-            </div>
-            <div class="card-content">
-                Muhammad Az-zahid Adhitya Silparensi - 13514095
-            </div>
-        </div>
     </div>
 </div>
 
+<h3 class="subtitle">Created by : </h3>
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-square">
+                    <img class="is-rounded" src='~/images/Jeje.jpg' alt="Jeje" />
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="content">
+                   <h4 class="title">Jeremia Jason Lasiman</h4>
+                   <h5 class="subtitle">13514021</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-square">
+                    <img class="is-rounded" src='~/images/Bervi.jpg' alt="Bervi" />
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="content">
+                    <h4 class="title">Bervianto Leo Pratama</h4>
+                    <h5 class="subtitle">13514047</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-square">
+                    <img class="is-rounded" src='~/images/Zahid.jpg' alt="Zahid" />
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="content">
+                    <h4 class="title">Muhammad Az-zahid Adhitya Silparensi</h4>
+                    <h5 class="subtitle">13514095</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

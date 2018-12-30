@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using Tweetinvi;
 using Tweetinvi.Core.Extensions;
 using Tweetinvi.Models;
+using Tweetinvi.Parameters;
 using Tweety.Models;
 using TweetyCore.Models;
 using Utils.StringMatching;
@@ -24,47 +25,40 @@ namespace TweetyCore.Utils
 
         public TwitterConnect()
         {
-            tweetResults = new TweetResult
-            {
+            tweetResults = new TweetResult {
                 Query = new List<QueryCategory>()
             };
-            dinasKesehatan = new QueryCategory
-            {
+            dinasKesehatan = new QueryCategory {
                 Id = "dinas_kesehatan",
                 Name = "Dinas Kesehatan",
                 Num = 0,
                 Tweet = new List<HasilTweet>()
             };
-            dinasBinamarga = new QueryCategory
-            {
+            dinasBinamarga = new QueryCategory {
                 Id = "dinas_binamarga",
                 Name = "Dinas Binamarga",
                 Num = 0,
                 Tweet = new List<HasilTweet>()
             };
-            dinasPemuda = new QueryCategory
-            {
+            dinasPemuda = new QueryCategory {
                 Id = "dinas_pemuda",
                 Name = "Dinas Pemuda",
                 Num = 0,
                 Tweet = new List<HasilTweet>()
             };
-            dinasPendidikan = new QueryCategory
-            {
+            dinasPendidikan = new QueryCategory {
                 Id = "dinas_pendidikan",
                 Name = "Dinas Pendidikan",
                 Num = 0,
                 Tweet = new List<HasilTweet>()
             };
-            dinasSosial = new QueryCategory
-            {
+            dinasSosial = new QueryCategory {
                 Id = "dinas_sosial",
                 Name = "Dinas Sosial",
                 Num = 0,
                 Tweet = new List<HasilTweet>()
             };
-            other = new QueryCategory
-            {
+            other = new QueryCategory {
                 Id = "no_category",
                 Name = "No Category",
                 Num = 0,
@@ -91,7 +85,8 @@ namespace TweetyCore.Utils
         public TweetResponse ProcessTag(Tags tags)
         {
             int sumOfTweets = ParseTag(tags);
-            return new TweetResponse(){ Count = sumOfTweets,
+            return new TweetResponse() {
+                Count = sumOfTweets,
                 Data = tweetResults
             };
         }
@@ -118,20 +113,16 @@ namespace TweetyCore.Utils
                     if (category.Id == "dinas_kesehatan")
                     {
                         keywords = tag.DinasKesehatan;
-                    }
-                    else if (category.Id == "dinas_binamarga")
+                    } else if (category.Id == "dinas_binamarga")
                     {
                         keywords = tag.DinasBinamarga;
-                    }
-                    else if (category.Id == "dinas_pendidikan")
+                    } else if (category.Id == "dinas_pendidikan")
                     {
                         keywords = tag.DinasPendidikan;
-                    }
-                    else if (category.Id == "dinas_pemuda")
+                    } else if (category.Id == "dinas_pemuda")
                     {
                         keywords = tag.DinasPemuda;
-                    }
-                    else if (category.Id == "dinas_sosial")
+                    } else if (category.Id == "dinas_sosial")
                     {
                         keywords = tag.DinasSosial;
                     }
@@ -144,8 +135,7 @@ namespace TweetyCore.Utils
                 {
                     if (!categorized[j])
                     {
-                        HasilTweet hasilTemp = new HasilTweet
-                        {
+                        HasilTweet hasilTemp = new HasilTweet {
                             TweetContent = tweets.ElementAt(j),
                             Result = tweets.ElementAt(j).Text
                         };
@@ -156,7 +146,7 @@ namespace TweetyCore.Utils
             return sumOfTweet;
         }
 
-        private void GetQuery(QueryCategory category, IEnumerable<ITweet> tweets, string keywords, bool isKMP)
+        private void GetQuery(QueryCategory category, IEnumerable<ITweet> tweets, string keywords, bool isKMP) 
         {
             string[] keywordsArray = keywords.Split(",");
             int i = 0;
@@ -171,8 +161,7 @@ namespace TweetyCore.Utils
                     if (isKMP)
                     {
                         indexFound = KMP.Solve(tweet.Text, keyWord);
-                    }
-                    else
+                    } else
                     {
                         indexFound = Booyer.Solve(tweet.Text, keyWord);
                     }
@@ -197,4 +186,3 @@ namespace TweetyCore.Utils
         }
     }
 }
-

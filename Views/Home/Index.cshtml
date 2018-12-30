@@ -2,53 +2,79 @@
 @{
     ViewBag.Title = "Home Page";
 }
-
-<center><h2>Search Tweet</h2></center>
+<div class="content has-text-centered">
+<h2 class="title">Search Tweet</h2>
+<div class="notification is-info">
+Seperated query with comma seperated. Example: air, tanah, api, angin
+</div>
 
 @using (Html.BeginForm())
 {
-    <div class="input-field">
-        @Html.TextBoxFor(model => model.Name)
-        @Html.LabelFor(model => model.Name, "Search to Twitter")
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            @Html.TextBoxFor(model => model.DinasKesehatan, null)
-            @Html.LabelFor(model => model.DinasKesehatan, "Query Dinas Kesehatan")
-        </div>
-        <div class="input-field col s6">
-            @Html.TextBoxFor(model => model.DinasSosial, null)
-            @Html.LabelFor(model => model.DinasSosial, "Query Dinas Sosial")
-        </div>
-        <div class="input-field col s6">
-            @Html.TextBoxFor(model => model.DinasPendidikan, null)
-            @Html.LabelFor(model => model.DinasPendidikan, "Query Dinas Pendidikan")
-        </div>
-        <div class="input-field col s6">
-            @Html.TextBoxFor(model => model.DinasBinamarga, null)
-            @Html.LabelFor(model => model.DinasBinamarga, "Query Dinas Binamarga & Pengairan")
-        </div>
-        <div class="input-field col s6">
-            @Html.TextBoxFor(model => model.DinasPemuda, null)
-            @Html.LabelFor(model => model.DinasPemuda, "Query Dinas Pemuda & Olahraga")
+    <div class="field">
+        @Html.LabelFor(model => model.Name, "Search to Twitter", new { Class="label"})
+        <div class="control">
+            @Html.TextBoxFor(model => model.Name, new {Class="input"})
         </div>
     </div>
-    <div class="row">
-        @Html.Label("Select Method : ") <br />
-        <p>
-            <label>
+    <div class="columns is-multiline">
+        <div class="field column is-one-third">
+
+            @Html.LabelFor(model => model.DinasKesehatan, "Query Dinas Kesehatan",  new { Class="label"})
+            <div class="control">
+
+            @Html.TextBoxFor(model => model.DinasKesehatan, null, new {Class="input"})
+            </div>
+        </div>
+        <div class="field column is-one-third">
+
+            @Html.LabelFor(model => model.DinasSosial, "Query Dinas Sosial", new { Class="label"})
+            <div class="control">
+
+            @Html.TextBoxFor(model => model.DinasSosial, null, new {Class="input"})
+            </div>
+        </div>
+        <div class="field column is-one-third">
+
+            @Html.LabelFor(model => model.DinasPendidikan, "Query Dinas Pendidikan", new { Class="label"})
+            <div class="control">
+
+            @Html.TextBoxFor(model => model.DinasPendidikan, null, new {Class="input"})
+            </div>
+        </div>
+        <div class="field column is-one-third">
+
+            @Html.LabelFor(model => model.DinasBinamarga, "Query Dinas Binamarga & Pengairan", new { Class="label"})
+            <div class="control">
+
+            @Html.TextBoxFor(model => model.DinasBinamarga, null, new {Class="input"})
+            </div>
+        </div>
+        <div class="field column is-one-third">
+
+            @Html.LabelFor(model => model.DinasPemuda, "Query Dinas Pemuda & Olahraga", new { Class="label"})
+            <div class="control">
+
+            @Html.TextBoxFor(model => model.DinasPemuda, null, new {Class="input"})
+            </div>
+        </div>
+
+        <div class="field column is-one-third">
+            <div class="control">
+                <label class="label">Select Method:</label>
+            </div>
+            <label class="radio">
                 @Html.RadioButtonFor(model => model.IsKMP, true)
                 <span>KMP</span>
             </label>
-        </p>
-        <p>
-            <label>
+            <label class="radio">
                 @Html.RadioButtonFor(model => model.IsKMP, false)
                 <span>Booyer-Moore</span>
             </label>
-        </p>
+        </div>
     </div>
     <div class="row">
-        <button type="submit" class="btn">Cari</button>
+        <button type="submit" class="button is-primary is-fullwidth">Cari</button>
     </div>
 }
+</div>
+
