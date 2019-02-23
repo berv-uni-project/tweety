@@ -8,4 +8,5 @@ FROM microsoft/dotnet:2.2-aspnetcore-runtime-alpine as runtime
 COPY --from=build /app/publish /app/publish
 WORKDIR /app/publish
 EXPOSE $PORT
+ENV ASPNETCORE_URLS http://*:$PORT
 CMD ["dotnet", "TweetyCore.dll"]
