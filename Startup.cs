@@ -47,7 +47,7 @@ namespace TweetyCore
 
             app.UseCors(builder => builder.WithOrigins("https://berv-uni-project.github.io").AllowAnyHeader());
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseMvc(routes => {
