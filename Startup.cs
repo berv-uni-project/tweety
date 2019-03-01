@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TweetyCore.EntityFramework;
 using TweetyCore.Utils.StringMatcher;
 using TweetyCore.Utils.Twitter;
 
@@ -27,6 +29,7 @@ namespace TweetyCore
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.AddDbContext<TweetyDbContext>(options => options.UseSqlite("tweety.db"));
             services.AddScoped<IKMP, KMP>();
             services.AddScoped<IBooyer, Booyer>();
             services.AddScoped<ITwitterConnect, TwitterConnect>();
