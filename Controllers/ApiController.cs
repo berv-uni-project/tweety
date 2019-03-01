@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Tweety.Models;
 using TweetyCore.Utils;
+using TweetyCore.Utils.Twitter;
 
 namespace TweetyCore.Controllers
 {
@@ -9,13 +10,17 @@ namespace TweetyCore.Controllers
     [ApiController]
     public class ApiController : ControllerBase
     {
+        private readonly ITwitterConnect _twitter;
+        public ApiController(ITwitterConnect twitter)
+        {
+            _twitter = twitter;
+        }
         [HttpPost("find")]
         public IActionResult Index([FromBody] Tags requestBody)
         {
             if (ModelState.IsValid)
             {
-                TwitterConnect twitterConnect = new TwitterConnect();
-                var result = twitterConnect.ProcessTag(requestBody);
+                var result = _twitter.ProcessTag(requestBody);
 
                 if (result.Count > 0)
                 {
@@ -28,7 +33,8 @@ namespace TweetyCore.Controllers
                 }
                 else
                 {
-                    return Ok(new {
+                    return Ok(new
+                    {
                         status = 200,
                         message = "Empty Result",
                         result = new List<string>()
