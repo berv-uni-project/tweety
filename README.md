@@ -2,6 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c130ac1728cd4caa94c8a0213a105336)](https://app.codacy.com/app/berviantoleo/tweety?utm_source=github.com&utm_medium=referral&utm_content=berv-uni-project/tweety&utm_campaign=Badge_Grade_Settings)
 [![Build Status](https://travis-ci.org/berv-uni-project/tweety.svg?branch=master)](https://travis-ci.org/berv-uni-project/tweety)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety?ref=badge_shield)
 
 Tweety, Twitter Tweet Categorizer. Using KMP and Boyer Moore Algorithm that find matching string.
 
@@ -83,3 +84,6 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety?ref=badge_large)
