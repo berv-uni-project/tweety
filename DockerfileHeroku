@@ -5,6 +5,7 @@ RUN dotnet restore
 RUN dotnet publish -c Release -o /app/publish
 
 FROM microsoft/dotnet:2.2-aspnetcore-runtime-alpine as runtime
+ENV ASPNETCORE_URLS=http://*:$PORT
 COPY --from=build /app/publish /app/publish
 WORKDIR /app/publish
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet TweetyCore.dll
+CMD ["dotnet", "TweetyCore.dll"]
