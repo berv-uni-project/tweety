@@ -50,7 +50,7 @@ namespace TweetyCore
                 app.UseHsts();
             }
 
-            app.UseCors(builder => builder.WithOrigins("https://berv-uni-project.github.io").AllowAnyHeader());
+            app.UseCors(builder => builder.WithOrigins("https://tweety-ui.herokuapp.com").AllowAnyHeader());
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
