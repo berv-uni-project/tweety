@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tweety.Models;
-using TweetyCore.Utils;
 using TweetyCore.Utils.Twitter;
 
 namespace TweetyCore.Controllers
 {
     [Route("api/v1/tweety")]
     [ApiController]
+    [Authorize]
     public class ApiController : ControllerBase
     {
         private readonly ITwitterConnect _twitter;
