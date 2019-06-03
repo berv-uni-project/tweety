@@ -4,6 +4,7 @@
 
 * Add Authentication to API
 * Add Ratelimit
+* Update dependencies NLog & TweetinviAPI
 
 # 0.2
 
