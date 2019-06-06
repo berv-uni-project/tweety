@@ -16,48 +16,45 @@ namespace TweetyCore.Utils.Twitter
         private readonly TweetResult _tweetResults = new TweetResult
         {
             Query = new List<QueryCategory>()
-        };
-        private readonly QueryCategory _dinasKesehatan = new QueryCategory
-        {
-            Id = "dinas_kesehatan",
-            Name = "Dinas Kesehatan",
-            Num = 0,
-            Tweet = new List<HasilTweet>()
-        };
-        private readonly QueryCategory _dinasBinamarga = new QueryCategory
-        {
-            Id = "dinas_binamarga",
-            Name = "Dinas Binamarga",
-            Num = 0,
-            Tweet = new List<HasilTweet>()
-        };
-        private readonly QueryCategory _dinasPemuda = new QueryCategory
-        {
-            Id = "dinas_pemuda",
-            Name = "Dinas Pemuda",
-            Num = 0,
-            Tweet = new List<HasilTweet>()
-        };
-        private readonly QueryCategory _dinasPendidikan = new QueryCategory
-        {
-            Id = "dinas_pendidikan",
-            Name = "Dinas Pendidikan",
-            Num = 0,
-            Tweet = new List<HasilTweet>()
-        };
-        private readonly QueryCategory _dinasSosial = new QueryCategory
-        {
-            Id = "dinas_sosial",
-            Name = "Dinas Sosial",
-            Num = 0,
-            Tweet = new List<HasilTweet>()
-        };
-        private readonly QueryCategory _others = new QueryCategory
-        {
-            Id = "no_category",
-            Name = "No Category",
-            Num = 0,
-            Tweet = new List<HasilTweet>()
+            {
+                new QueryCategory
+                {
+                    Id = "dinas_kesehatan",
+                    Name = "Dinas Kesehatan",
+                    Num = 0,
+                    Tweet = new List<HasilTweet>()
+                }, new QueryCategory
+                {
+                    Id = "dinas_binamarga",
+                    Name = "Dinas Binamarga",
+                    Num = 0,
+                    Tweet = new List<HasilTweet>()
+                }, new QueryCategory
+                {
+                    Id = "dinas_pemuda",
+                    Name = "Dinas Pemuda",
+                    Num = 0,
+                    Tweet = new List<HasilTweet>()
+                }, new QueryCategory
+                {
+                    Id = "dinas_pendidikan",
+                    Name = "Dinas Pendidikan",
+                    Num = 0,
+                    Tweet = new List<HasilTweet>()
+                }, new QueryCategory
+                {
+                    Id = "dinas_sosial",
+                    Name = "Dinas Sosial",
+                    Num = 0,
+                    Tweet = new List<HasilTweet>()
+                }, new QueryCategory
+                {
+                    Id = "no_category",
+                    Name = "No Category",
+                    Num = 0,
+                    Tweet = new List<HasilTweet>()
+                }
+            }
         };
         private bool[] _categorized;
         private readonly ILogger<TwitterConnect> _logger;
@@ -72,29 +69,12 @@ namespace TweetyCore.Utils.Twitter
             _logger = logger;
             _kmp = kmp;
             _booyer = booyer;
-            _tweetResults.Query.Add(_dinasKesehatan);
-            _tweetResults.Query.Add(_dinasBinamarga);
-            _tweetResults.Query.Add(_dinasPemuda);
-            _tweetResults.Query.Add(_dinasPendidikan);
-            _tweetResults.Query.Add(_dinasSosial);
-            _tweetResults.Query.Add(_others);
-            Connect();
-        }
-
-        public TwitterConnect()
-        {
-            _tweetResults.Query.Add(_dinasKesehatan);
-            _tweetResults.Query.Add(_dinasBinamarga);
-            _tweetResults.Query.Add(_dinasPemuda);
-            _tweetResults.Query.Add(_dinasPendidikan);
-            _tweetResults.Query.Add(_dinasSosial);
-            _tweetResults.Query.Add(_others);
-            Connect();
+            //Connect();
         }
 
         public TweetResponse ProcessTag(Tags tags)
         {
-            int sumOfTweets = ParseTag(tags);
+            int sumOfTweets = _ParseTag(tags);
             return new TweetResponse()
             {
                 Count = sumOfTweets,
@@ -102,19 +82,9 @@ namespace TweetyCore.Utils.Twitter
             };
         }
 
-        #region Private Methods
-        private void Connect()
-        {
-            string customer_key = Environment.GetEnvironmentVariable("CUSTOMER_KEY");
-            string customer_secret = Environment.GetEnvironmentVariable("CUSTOMER_SECRET");
-            string token = Environment.GetEnvironmentVariable("TOKEN");
-            string token_secret = Environment.GetEnvironmentVariable("TOKEN_SECRET");
-            // When a new thread is created, the default credentials will be the Application Credentials
-            Auth.ApplicationCredentials = new TwitterCredentials(customer_key, customer_secret, token, token_secret);
-            _logger.LogInformation("Auth Completed");
-        }
+        #region Private Methods      
 
-        private int ParseTag(Tags tag)
+        private int _ParseTag(Tags tag)
         {
             int sumOfTweet = 0;
             var searchParameter = Search.CreateTweetSearchParameter(tag.Name);
@@ -155,7 +125,7 @@ namespace TweetyCore.Utils.Twitter
 
                     if (keywords != null && keywords != "")
                     {
-                        GetQuery(category, tweets, keywords, tag.IsKMP);
+                        _GetQuery(category, tweets, keywords, tag.IsKMP);
                     }
                 }
                 for (int j = 0; j < sumOfTweet; j++)
@@ -174,7 +144,7 @@ namespace TweetyCore.Utils.Twitter
             return sumOfTweet;
         }
 
-        private void GetQuery(QueryCategory category, IEnumerable<ITweet> tweets, string keywords, bool isKMP)
+        private void _GetQuery(QueryCategory category, IEnumerable<ITweet> tweets, string keywords, bool isKMP)
         {
             string[] keywordsArray = keywords.Split(",");
             int i = 0;

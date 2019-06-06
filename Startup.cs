@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using Tweetinvi;
+using Tweetinvi.Models;
 using TweetyCore.EntityFramework;
 using TweetyCore.Utils;
 using TweetyCore.Utils.StringMatcher;
@@ -59,6 +62,8 @@ namespace TweetyCore
                 options.AddPolicy("read:users", policy => policy.Requirements.Add(new HasScopeRequirement("read:users", domain)));
             });
 
+            _Connect();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -87,6 +92,16 @@ namespace TweetyCore
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private void _Connect()
+        {
+            string customer_key = Environment.GetEnvironmentVariable("CUSTOMER_KEY");
+            string customer_secret = Environment.GetEnvironmentVariable("CUSTOMER_SECRET");
+            string token = Environment.GetEnvironmentVariable("TOKEN");
+            string token_secret = Environment.GetEnvironmentVariable("TOKEN_SECRET");
+            // When a new thread is created, the default credentials will be the Application Credentials
+            Auth.ApplicationCredentials = new TwitterCredentials(customer_key, customer_secret, token, token_secret);
         }
     }
 }
