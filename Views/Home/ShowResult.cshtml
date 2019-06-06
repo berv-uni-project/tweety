@@ -9,7 +9,7 @@
     <div class="card-content">
         <h2 class="title">Result</h2>
     </div>
-    <b-tabs position="is-centered" class="block">
+    <b-tabs position="is-centered" class="block" type="is-toggle" expanded>
         @foreach (Tweety.Models.QueryCategory QQ in Model.Query)
             {
                 <b-tab-item label="@QQ.Name">
