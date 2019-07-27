@@ -69,12 +69,12 @@ namespace TweetyCore.Utils.Twitter
             _logger = logger;
             _kmp = kmp;
             _booyer = booyer;
-            //Connect();
         }
 
         public TweetResponse ProcessTag(Tags tags)
         {
             int sumOfTweets = _ParseTag(tags);
+            _logger.LogInformation($"Sum of Tweets: {sumOfTweets}");
             return new TweetResponse()
             {
                 Count = sumOfTweets,
@@ -155,7 +155,6 @@ namespace TweetyCore.Utils.Twitter
                 string newText = tweet.Text;
                 foreach (string keyWord in keywordsArray)
                 {
-                    indexFound = -1;
                     if (isKMP)
                     {
                         indexFound = _kmp.Solve(tweet.Text, keyWord);
@@ -169,6 +168,7 @@ namespace TweetyCore.Utils.Twitter
                         cats++;
                         _categorized[i] = true;
                         newText = Regex.Replace(newText, keyWord, @"<b>$&</b>", RegexOptions.IgnoreCase);
+                        _logger.LogInformation($"Changes from {tweet.Text}, to New Text: {newText}");
                     }
                 }
                 if (cats > 0)
