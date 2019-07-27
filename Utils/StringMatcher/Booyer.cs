@@ -5,40 +5,40 @@ namespace TweetyCore.Utils.StringMatcher
 {
     public class Booyer : IBooyer
     {
-        private string _input;
-        private string _keyword;
-        private int[] last;
-        private const int maxEmoticon = 128;
-        private ILogger<Booyer> _logger;
+        private int[] _last;
+        private const int _maxEmoticon = 128;
+        private readonly ILogger<Booyer> _logger;
 
         public Booyer(ILogger<Booyer> logger)
         {
             _logger = logger;
         }
 
-        private void InitLast(string _keyword)
+        private void InitLast(string keyword)
         {
             _logger.LogInformation("Setup Last");
-            last = new int[maxEmoticon];
+            _last = new int[_maxEmoticon];
 
-            for (int i = 0; i < maxEmoticon; i++)
+            for (int i = 0; i < _maxEmoticon; i++)
             {
-                last[i] = -1;
+                _last[i] = -1;
             }
 
-            for (int i = 0; i < _keyword.Length; i++)
+            for (int i = 0; i < keyword.Length; i++)
             {
-                last[_keyword[i]] = i;
+                _last[keyword[i]] = i;
             }
         }
 
         public int Solve(string input, string keyword)
         {
-            _input = input.ToLower();
-            _keyword = keyword.ToLower();
+            if (string.IsNullOrEmpty(input) || string.IsNullOrEmpty(keyword))
+            {
+                return -1;
+            }
             InitLast(keyword);
-            int n = _input.Length;
-            int m = _keyword.Length;
+            int n = input.Length;
+            int m = keyword.Length;
             int i = m - 1;
 
             if (i > n - 1)
@@ -66,7 +66,7 @@ namespace TweetyCore.Utils.StringMatcher
                     int lo;
                     if (!(input[i] > 128 || input[i] < 0))
                     {
-                        lo = last[input[i]];
+                        lo = _last[input[i]];
                     }
                     else
                     {
