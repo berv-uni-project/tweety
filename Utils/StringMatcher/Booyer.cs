@@ -36,11 +36,11 @@ namespace TweetyCore.Utils.StringMatcher
             {
                 return -1;
             }
-            input = input.ToLower();
-            keyword = keyword.ToLower();
-            InitLast(keyword);
-            int n = input.Length;
-            int m = keyword.Length;
+            var _input = input.ToLower();
+            var _keyword = keyword.ToLower();
+            InitLast(_keyword);
+            int n = _input.Length;
+            int m = _keyword.Length;
             int i = m - 1;
 
             if (i > n - 1)
@@ -51,7 +51,7 @@ namespace TweetyCore.Utils.StringMatcher
             int j = m - 1;
             do
             {
-                if (keyword[j] == input[i])
+                if (_keyword[j] == _input[i])
                 {
                     if (j == 0)
                     {
@@ -66,9 +66,9 @@ namespace TweetyCore.Utils.StringMatcher
                 else
                 {
                     int lo;
-                    if (!(input[i] > 128 || input[i] < 0))
+                    if (!(_input[i] > 128 || _input[i] < 0))
                     {
-                        lo = _last[input[i]];
+                        lo = _last[_input[i]];
                     }
                     else
                     {
