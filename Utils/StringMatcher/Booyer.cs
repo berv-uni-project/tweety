@@ -36,6 +36,8 @@ namespace TweetyCore.Utils.StringMatcher
             {
                 return -1;
             }
+            input = input.ToLower();
+            keyword = keyword.ToLower();
             InitLast(keyword);
             int n = input.Length;
             int m = keyword.Length;
