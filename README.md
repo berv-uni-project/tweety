@@ -9,7 +9,6 @@ Tweety, Twitter Tweet Categorizer. Using KMP and Boyer Moore Algorithm that find
 ## Demo & Related Projects
 
 - [MVC](https://tweetycore.azurewebsites.net/)
-
 - [Tweety UI - Vue](https://berv-uni-project.github.io/tweety/)
 
 ## About App
@@ -44,9 +43,7 @@ TOKEN_SECRET=...
 ## Created By
 
 1. [Bervianto Leo Pratama](https://github.com/berviantoleo)
-
 2. [Jeremia Jason Lasiman](http://github.com/JeremiaJ)
-
 3. [M. Az-zahid Adhitya Silparensi](https://github.com/Azzahid)
 
 ## LICENSE
@@ -84,6 +81,5 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fberv-uni-project%2Ftweety?ref=badge_large)
