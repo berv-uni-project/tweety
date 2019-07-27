@@ -1,4 +1,4 @@
-new window.Vue({
+const vue = new window.Vue({
   el: "#app",
   methods: {
     openImage(url) {
