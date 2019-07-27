@@ -19,7 +19,7 @@ This app build with `C#` (Based Language for Logic in KMP & Boyer Moore Algorith
 
 This app using `Twitter API`, so you must have token key.
 
-Youtube Review (v0.1) : https://www.youtube.com/watch?v=uGtZCm9duLw
+Youtube Review (v0.1) : [Youtube Link](https://www.youtube.com/watch?v=uGtZCm9duLw)
 
 ## Development
 
