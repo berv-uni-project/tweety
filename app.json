@@ -1,0 +1,37 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+    "CUSTOMER_KEY": {
+      "required": true
+    },
+    "CUSTOMER_SECRET": {
+      "required": true
+    },
+    "GOOGLE_CLIENT_ID": {
+      "required": true
+    },
+    "GOOGLE_CLIENT_SECRET": {
+      "required": true
+    },
+    "TOKEN": {
+      "required": true
+    },
+    "TOKEN_SECRET": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "tweety",
+  "scripts": {
+  },
+  "stack": "container"
+}
