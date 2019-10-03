@@ -1,5 +1,9 @@
 ﻿# CHANGE LOG
 
+## 0.4
+
+* Upgrade to .NET Core 3.0
+
 ## 0.3
 
 * Add Authentication to API
