@@ -78,7 +78,7 @@ namespace TweetyCore
             app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapDefaultControllerRoute();
             });
         }
 
