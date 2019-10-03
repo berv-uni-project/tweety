@@ -1,12 +1,4 @@
-language: csharp
-
-mono: none
-
-dotnet: 2.2
-
-dist: xenial
-
+services:
+  - docker
 script:
-  - dotnet restore
-  - dotnet build
-  - dotnet publish 
+  - docker build -t berviantoleo/tweety .
