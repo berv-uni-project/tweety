@@ -3,6 +3,9 @@
 ## 0.4.1
 
 * Upgrade to .NET Core 3.1
+* Update css/js dependencies
+* Rearrange Image Output
+* Update Required Message Error
 
 ## 0.4
 
