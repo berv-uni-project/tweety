@@ -22,19 +22,33 @@
                                 <div class="media">
                                     <figure class="media-left">
                                         <a href="http://twitter.com/@TT.TweetContent.CreatedBy.ScreenName">
-                                            <img src="@TT.TweetContent.CreatedBy.ProfileImageUrl" class="circle" />
+                                            <figure class="image">
+                                                <img src="@TT.TweetContent.CreatedBy.ProfileImageUrl" class="is-rounded" />
+                                            </figure>
                                         </a>
                                     </figure>
                                     <div class="media-content">
                                         <span class="title">
                                             <a href="http://twitter.com/@TT.TweetContent.CreatedBy.ScreenName"> @TT.TweetContent.CreatedBy.Name </a>
                                         </span>
-                                        <p> @Html.Raw(@TT.Result) </p>
-                                        @for (int i = 0; i < TT.TweetContent.Entities.Medias.Count; i++)
-                                        {<a href="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL">
-                                                <img src="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL" class="materialboxed" width="100" height="100" />
-                                            </a>
-                                        }
+                                        <p class="content"> @Html.Raw(@TT.Result) </p>
+                                        <div class="container">
+                                            <b-carousel>
+                                                @for (int i = 0; i < TT.TweetContent.Entities.Medias.Count; i++)
+                                                {
+                                                <b-carousel-item>
+                                                    <div class="container has-text-centered">
+                                                        <a class="is-centered" href="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL">
+                                                            <figure class="image is-16by9">
+                                                                <img src="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL" />
+                                                            </figure>
+                                                        </a>
+                                                    </div>
+                                                </b-carousel-item>
+                                                }
+
+                                            </b-carousel>
+                                        </div>
                                         <p> <a href="@TT.TweetContent.Url">@TT.TweetContent.CreatedAt</a>  </p>
                                     </div>
                                 </div>

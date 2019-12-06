@@ -125,7 +125,7 @@ namespace TweetyCore.Utils.Twitter
 
                     if (keywords != null && keywords != "")
                     {
-                        _GetQuery(category, tweets, keywords, tag.IsKMP);
+                        _GetQuery(category, tweets, keywords, tag.IsKMP.GetValueOrDefault());
                     }
                 }
                 for (int j = 0; j < sumOfTweet; j++)

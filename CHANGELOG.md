@@ -1,5 +1,9 @@
 ﻿# CHANGE LOG
 
+## 0.4.1
+
+* Upgrade to .NET Core 3.1
+
 ## 0.4
 
 * Upgrade to .NET Core 3.0
