@@ -1,5 +1,3 @@
-using System;
-
 namespace TweetyCore.Models
 {
     public class ErrorViewModel

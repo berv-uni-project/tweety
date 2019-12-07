@@ -12,7 +12,7 @@
 <body class="has-navbar-fixed-top">
     <header class="navbar-fixed">
         <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-            
+
             <div class="navbar-brand">
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">
                     <figure class="image is-32x32">
@@ -25,8 +25,6 @@
                     <span aria-hidden="true"></span>
                 </a>
             </div>
-            
-
             <div class="navbar-menu" id="navMenu">
                 <div class="navbar-end">
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">Home</a>
@@ -43,13 +41,14 @@
             @RenderBody()
         </div>
     </section>
-
     <footer class="footer">
-            <div class="content has-text-centered">
-                <p>&copy; 2018 - Tweety - <b>Bervianto Leo Pratama</b></p>
-            </div>
+        <div class="content has-text-centered">
+            <p>
+                &copy; 2018 - Tweety -
+                <b>Bervianto Leo Pratama</b>
+            </p>
+        </div>
     </footer>
-
     <environment include="Development">
         <script src="https://unpkg.com/vue"></script>
     </environment>
