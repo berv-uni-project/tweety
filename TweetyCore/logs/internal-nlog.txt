@@ -1,0 +1,100 @@
+2019-12-06 07:35:38.1167 Info Message Template Auto Format enabled
+2019-12-06 07:35:38.1345 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:35:38.2275 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:35:38.2612 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:35:38.2856 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:35:38.3406 Info Found 60 configuration items
+2019-12-06 07:41:07.0071 Info Message Template Auto Format enabled
+2019-12-06 07:41:07.0304 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:41:07.1258 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:41:07.1448 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:41:07.1448 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:41:07.2091 Info Found 60 configuration items
+2019-12-06 07:47:23.8777 Info Message Template Auto Format enabled
+2019-12-06 07:47:23.8929 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:47:23.9589 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:47:23.9752 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:47:23.9752 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:47:24.0428 Info Found 60 configuration items
+2019-12-06 07:48:52.1487 Info Message Template Auto Format enabled
+2019-12-06 07:48:52.1715 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:48:52.2467 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:48:52.2640 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:48:52.2776 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:48:52.3202 Info Found 60 configuration items
+2019-12-06 07:52:13.6981 Info Message Template Auto Format enabled
+2019-12-06 07:52:13.7277 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:52:13.8070 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:52:13.8185 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:52:13.8478 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:52:13.8964 Info Found 60 configuration items
+2019-12-06 07:52:43.6294 Info AppDomain Shutting down. Logger closing...
+2019-12-06 07:52:43.6437 Info Logger has been shut down.
+2019-12-06 07:52:48.2800 Info Message Template Auto Format enabled
+2019-12-06 07:52:48.2923 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:52:48.3515 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:52:48.3657 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:52:48.3657 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:52:48.4151 Info Found 60 configuration items
+2019-12-06 07:53:45.4470 Info Message Template Auto Format enabled
+2019-12-06 07:53:45.4623 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:53:45.5302 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:53:45.5439 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:53:45.5514 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:53:45.5894 Info Found 60 configuration items
+2019-12-06 07:58:50.4787 Info Message Template Auto Format enabled
+2019-12-06 07:58:50.4912 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 07:58:50.5515 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 07:58:50.5515 Info Adding target FileTarget(Name=allfile)
+2019-12-06 07:58:50.5702 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 07:58:50.6095 Info Found 60 configuration items
+2019-12-06 08:03:45.0189 Info Message Template Auto Format enabled
+2019-12-06 08:03:45.0189 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 08:03:45.1024 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 08:03:45.1145 Info Adding target FileTarget(Name=allfile)
+2019-12-06 08:03:45.1145 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 08:03:45.1568 Info Found 60 configuration items
+2019-12-06 08:05:02.6640 Info Message Template Auto Format enabled
+2019-12-06 08:05:02.6766 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 08:05:02.7354 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 08:05:02.7354 Info Adding target FileTarget(Name=allfile)
+2019-12-06 08:05:02.7558 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 08:05:02.7950 Info Found 60 configuration items
+2019-12-06 08:06:26.4298 Info Message Template Auto Format enabled
+2019-12-06 08:06:26.4564 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 08:06:26.5203 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 08:06:26.5355 Info Adding target FileTarget(Name=allfile)
+2019-12-06 08:06:26.5355 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 08:06:26.5783 Info Found 60 configuration items
+2019-12-06 08:10:42.0449 Info Message Template Auto Format enabled
+2019-12-06 08:10:42.0586 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 08:10:42.1377 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 08:10:42.1490 Info Adding target FileTarget(Name=allfile)
+2019-12-06 08:10:42.1490 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 08:10:42.1974 Info Found 60 configuration items
+2019-12-06 08:12:58.6075 Info Message Template Auto Format enabled
+2019-12-06 08:12:58.6193 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 08:12:58.6764 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 08:12:58.6764 Info Adding target FileTarget(Name=allfile)
+2019-12-06 08:12:58.6952 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 08:12:58.7317 Info Found 60 configuration items
+2019-12-06 08:14:34.5750 Info Message Template Auto Format enabled
+2019-12-06 08:14:34.5874 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-06 08:14:34.6631 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-06 08:14:34.6776 Info Adding target FileTarget(Name=allfile)
+2019-12-06 08:14:34.6901 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-06 08:14:34.7287 Info Found 60 configuration items
+2019-12-07 08:13:05.1693 Info Message Template Auto Format enabled
+2019-12-07 08:13:05.2031 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-07 08:13:05.3366 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-07 08:13:05.3643 Info Adding target FileTarget(Name=allfile)
+2019-12-07 08:13:05.3643 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-07 08:13:05.4410 Info Found 60 configuration items
+2019-12-07 08:16:13.0071 Info Message Template Auto Format enabled
+2019-12-07 08:16:13.0236 Info Loading assembly: NLog.Web.AspNetCore
+2019-12-07 08:16:13.1043 Info Adding target ColoredConsoleTarget(Name=console)
+2019-12-07 08:16:13.1184 Info Adding target FileTarget(Name=allfile)
+2019-12-07 08:16:13.1312 Info Adding target FileTarget(Name=ownFile-web)
+2019-12-07 08:16:13.1801 Info Found 60 configuration items
+2019-12-07 08:17:14.2144 Info AppDomain Shutting down. Logger closing...
+2019-12-07 08:17:14.2275 Info Logger has been shut down.
