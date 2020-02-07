@@ -8,8 +8,8 @@ Tweety, Twitter Tweet Categorizer. Using KMP and Boyer Moore Algorithm that find
 
 ## Demo & Related Projects
 
-- [MVC](https://tweetycore.azurewebsites.net/)
-- [Tweety UI - Vue](https://berv-uni-project.github.io/tweety/)
+- [MVC](https://tweety-core.azurewebsites.net/)
+- [Tweety UI - Vue](https://tweety.onrender.com)
 
 ## About App
 
