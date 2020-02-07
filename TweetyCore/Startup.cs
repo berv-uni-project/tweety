@@ -53,7 +53,7 @@ namespace TweetyCore
                 .AddJwtBearer(options =>
                 {
                     options.Authority = domain;
-                    options.Audience = Configuration["Auth0:ApiIdentifier"];
+                    options.Audience = Environment.GetEnvironmentVariable("AUTH0_AUDIANCE");
                 });
 
             services.AddAuthorization(options =>
