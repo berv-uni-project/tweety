@@ -73,7 +73,7 @@ namespace TweetyCore
             app.UseStaticFiles();
             app.UseRouting();
             app.UseCookiePolicy();
-            app.UseCors(builder => builder.WithOrigins("https://tweety-ui.herokuapp.com").AllowAnyHeader());
+            app.UseCors(builder => builder.WithOrigins(Environment.GetEnvironmentVariable("CORS_ALLOW")).AllowAnyHeader());
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
