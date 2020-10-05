@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Tweetinvi;
 using Tweetinvi.Models;
+using Tweetinvi.Parameters;
 using Tweety.Models;
 using TweetyCore.Models;
 using TweetyCore.Utils.StringMatcher;
@@ -60,6 +62,7 @@ namespace TweetyCore.Utils.Twitter
         private readonly ILogger<TwitterConnect> _logger;
         private readonly IKMP _kmp;
         private readonly IBooyer _booyer;
+        private readonly ITwitterClient _twitterClient;
 
         public TwitterConnect(ILogger<TwitterConnect> logger,
             IKMP kmp,
@@ -69,11 +72,16 @@ namespace TweetyCore.Utils.Twitter
             _logger = logger;
             _kmp = kmp;
             _booyer = booyer;
+            string customer_key = Environment.GetEnvironmentVariable("CUSTOMER_KEY");
+            string customer_secret = Environment.GetEnvironmentVariable("CUSTOMER_SECRET");
+            string token = Environment.GetEnvironmentVariable("TOKEN");
+            string token_secret = Environment.GetEnvironmentVariable("TOKEN_SECRET");
+            _twitterClient = new TwitterClient(customer_key, customer_secret, token, token_secret);
         }
 
-        public TweetResponse ProcessTag(Tags tags)
+        public async Task<TweetResponse> ProcessTag(Tags tags)
         {
-            int sumOfTweets = _ParseTag(tags);
+            int sumOfTweets = await _ParseTag(tags);
             _logger.LogInformation($"Sum of Tweets: {sumOfTweets}");
             return new TweetResponse()
             {
@@ -82,14 +90,14 @@ namespace TweetyCore.Utils.Twitter
             };
         }
 
-        #region Private Methods      
-
-        private int _ParseTag(Tags tag)
+        #region Private Methods    
+        private async Task<int> _ParseTag(Tags tag)
         {
             int sumOfTweet = 0;
-            var searchParameter = Search.CreateTweetSearchParameter(tag.Name);
-            searchParameter.MaximumNumberOfResults = 100;
-            var tweets = Search.SearchTweets(searchParameter);
+            var tweets = await _twitterClient.Search.SearchTweetsAsync(new SearchTweetsParameters(tag.Name)
+            {
+                PageSize = 100
+            });
             if (tweets != null)
             {
                 sumOfTweet = tweets.Count();

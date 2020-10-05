@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Tweety.Models;
 using TweetyCore.Models;
-using TweetyCore.Utils;
 using TweetyCore.Utils.Twitter;
 
 namespace TweetyCore.Controllers
@@ -26,11 +26,11 @@ namespace TweetyCore.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Tags tags)
+        public async Task<ActionResult> Index(Tags tags)
         {
             if (ModelState.IsValid)
             {
-                var result = _twitter.ProcessTag(tags);
+                var result = await _twitter.ProcessTag(tags);
                 if (result.Count > 0)
                 {
                     return View("ShowResult", result.Data);

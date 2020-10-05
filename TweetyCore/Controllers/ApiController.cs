@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Tweety.Models;
@@ -17,11 +18,11 @@ namespace TweetyCore.Controllers
             _twitter = twitter;
         }
         [HttpPost("find")]
-        public IActionResult Index([FromBody] Tags requestBody)
+        public async Task<ActionResult> Index([FromBody] Tags requestBody)
         {
             if (ModelState.IsValid)
             {
-                var result = _twitter.ProcessTag(requestBody);
+                var result = await _twitter.ProcessTag(requestBody);
 
                 if (result.Count > 0)
                 {
