@@ -8,4 +8,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0-alpine as runtime
 COPY --from=build /app/publish /app/publish
 WORKDIR /app/publish
 EXPOSE 80
-CMD ["dotnet", "TweetyCore.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet TweetyCore.dll
