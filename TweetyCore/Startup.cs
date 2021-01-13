@@ -1,11 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.UI;
 using System;
+using System.Collections.Generic;
 using TweetyCore.EntityFramework;
 using TweetyCore.Utils;
 using TweetyCore.Utils.StringMatcher;
@@ -41,25 +46,18 @@ namespace TweetyCore
             services.AddScoped<ITwitterConnect, TwitterConnect>();
 
             services.AddCors();
-            string domain = $"https://{Configuration["Auth0:Domain"]}/";
-            services
-                .AddAuthentication(options =>
-                {
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                })
-                .AddJwtBearer(options =>
-                {
-                    options.Authority = domain;
-                    options.Audience = Environment.GetEnvironmentVariable("AUTH0_AUDIANCE");
-                });
+            services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+               .AddMicrosoftIdentityWebApp(Configuration);
 
-            services.AddAuthorization(options =>
+            services.AddAuthentication().AddMicrosoftIdentityWebApi(Configuration);
+
+            services.AddControllersWithViews(options =>
             {
-                options.AddPolicy("read:users", policy => policy.Requirements.Add(new HasScopeRequirement("read:users", domain)));
-            });
-
-            services.AddControllersWithViews();
+                var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
+            }).AddMicrosoftIdentityUI();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,13 +67,14 @@ namespace TweetyCore
             app.UseStaticFiles();
             app.UseRouting();
             app.UseCookiePolicy();
-            app.UseCors(builder => builder.WithOrigins(Environment.GetEnvironmentVariable("CORS_ALLOW")).AllowAnyHeader());
+            var corsAllow = Environment.GetEnvironmentVariable("CORS_ALLOW") ?? "*";
+            app.UseCors(builder => builder.WithOrigins(corsAllow).AllowAnyHeader());
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
             });
-        }        
+        }
     }
 }

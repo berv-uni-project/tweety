@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Principal
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -29,6 +31,19 @@
                 <div class="navbar-end">
                     <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">Home</a>
                     <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-item">About</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="navbar-item" href="#">
+                            Hello @User.Identity.Name!
+                        </a>
+                        <a class="navbar-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">
+                            Sign out
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="navbar-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+                    }
                 </div>
             </div>
         </nav>

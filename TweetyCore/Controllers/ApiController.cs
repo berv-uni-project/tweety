@@ -9,7 +9,7 @@ namespace TweetyCore.Controllers
 {
     [Route("api/v1/tweety")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ApiController : ControllerBase
     {
         private readonly ITwitterConnect _twitter;
