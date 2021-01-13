@@ -36,12 +36,16 @@
                         </a>
                         <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">Home</a>
                         <a class="navbar-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">
-                            Sign out
+                            <div class="button is-danger">
+                                Sign out
+                            </div>
                         </a>
                     }
                     else
                     {
-                        <a class="navbar-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+                        <a class="navbar-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">
+                            <div class="button is-primary">Sign in</div>
+                        </a>
                     }
                     <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-item">About</a>
                 </div>
