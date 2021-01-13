@@ -20,7 +20,7 @@
                             <div class="box">
                                 <div class="media">
                                     <figure class="media-left">
-                                        <a href="https://twitter.com/@TT.TweetContent.CreatedBy.ScreenName">
+                                        <a href="@TT.TweetContent.CreatedBy.Url">
                                             <figure class="image">
                                                 <img src="@TT.TweetContent.CreatedBy.ProfileImageUrl" class="is-rounded" />
                                             </figure>
@@ -28,7 +28,7 @@
                                     </figure>
                                     <div class="media-content">
                                         <span class="title">
-                                            <a href="https://twitter.com/@TT.TweetContent.CreatedBy.ScreenName"> @TT.TweetContent.CreatedBy.Name </a>
+                                            <a href="@TT.TweetContent.CreatedBy.Url"> @TT.TweetContent.CreatedBy.Name </a>
                                         </span>
                                         <p class="content"> @Html.Raw(@TT.Result) </p>
                                         <div class="container">
@@ -39,9 +39,9 @@
                                                     {
                                                         <b-carousel-item>
                                                             <div class="container has-text-centered">
-                                                                <a class="is-centered" href="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL">
+                                                                <a class="is-centered" href="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURLHttps">
                                                                     <figure class="image is-16by9">
-                                                                        <img src="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURL" />
+                                                                        <img src="@TT.TweetContent.Entities.Medias.ElementAt(i).MediaURLHttps" />
                                                                     </figure>
                                                                 </a>
                                                             </div>
