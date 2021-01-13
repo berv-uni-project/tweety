@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TweetyCore</title>
     <link rel="icon" href="~/images/Tweety.jpg" />
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.6.95/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://unpkg.com/buefy@0.8.8/dist/buefy.min.css">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.8.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/buefy@0.9.4/dist/buefy.min.css">
 </head>
 <body class="has-navbar-fixed-top">
     <header class="navbar-fixed">
@@ -29,13 +29,12 @@
             </div>
             <div class="navbar-menu" id="navMenu">
                 <div class="navbar-end">
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">Home</a>
-                    <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-item">About</a>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <a class="navbar-item" href="#">
                             Hello @User.Identity.Name!
                         </a>
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-item">Home</a>
                         <a class="navbar-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">
                             Sign out
                         </a>
@@ -44,6 +43,7 @@
                     {
                         <a class="navbar-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
                     }
+                    <a asp-area="" asp-controller="Home" asp-action="About" class="navbar-item">About</a>
                 </div>
             </div>
         </nav>
@@ -59,7 +59,7 @@
     <footer class="footer">
         <div class="content has-text-centered">
             <p>
-                &copy; 2018 - Tweety -
+                &copy; 2018-2021 - Tweety -
                 <b>Bervianto Leo Pratama</b>
             </p>
         </div>
