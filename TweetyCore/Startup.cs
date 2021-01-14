@@ -46,6 +46,9 @@ namespace TweetyCore
             services.AddScoped<ITwitterConnect, TwitterConnect>();
 
             services.AddCors();
+
+            services.AddSwaggerGen();
+
             services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
                .AddMicrosoftIdentityWebApp(Configuration);
 
