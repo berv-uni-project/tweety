@@ -1,0 +1,35 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - tweety-core
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@master
+
+    - uses: azure/docker-login@v1
+      with:
+        login-server: https://docker.pkg.github.com/
+        username: ${{ secrets.AzureAppService_ContainerUsername_7403efb9198e403192c21f431a0f0409 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_89e66a848432477088d7b294b37525eb }}
+
+    - run: |
+        docker build . -t docker.pkg.github.com/${{ secrets.AzureAppService_ContainerUsername_7403efb9198e403192c21f431a0f0409 }}/berv-uni-project/tweety/tweety:${{ github.sha }}
+        docker push docker.pkg.github.com/${{ secrets.AzureAppService_ContainerUsername_7403efb9198e403192c21f431a0f0409 }}/berv-uni-project/tweety/tweety:${{ github.sha }}
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'tweety-core'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e1d75e19755e4f508296cc3c3cf86e8d }}
+        images: 'docker.pkg.github.com/${{ secrets.AzureAppService_ContainerUsername_7403efb9198e403192c21f431a0f0409 }}/berv-uni-project/tweety/tweety:${{ github.sha }}'
