@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace TweetyCore.Controllers
 {
     [Route("api/v1/tweety")]
     [ApiController]
-    //[Authorize]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ApiController : ControllerBase
     {
         private readonly ITwitterConnect _twitter;
@@ -20,7 +21,6 @@ namespace TweetyCore.Controllers
             _twitter = twitter;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost("find")]
         public async Task<ActionResult> Index([FromBody] Tags requestBody)
         {

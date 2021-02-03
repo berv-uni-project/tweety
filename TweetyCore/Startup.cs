@@ -12,7 +12,6 @@ using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using System;
 using TweetyCore.EntityFramework;
-using TweetyCore.Utils;
 using TweetyCore.Utils.StringMatcher;
 using TweetyCore.Utils.Twitter;
 
@@ -40,7 +39,6 @@ namespace TweetyCore
             services.AddDbContext<TweetyDbContext>(options => options.UseSqlite("tweety.db"));
 
             // register the scope authorization handler
-            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
             services.AddScoped<IKMP, KMP>();
             services.AddScoped<IBooyer, Booyer>();
             services.AddScoped<ITwitterConnect, TwitterConnect>();
@@ -53,7 +51,7 @@ namespace TweetyCore
                .AddMicrosoftIdentityWebApp(Configuration);
 
             services.AddAuthentication().AddMicrosoftIdentityWebApi(Configuration);
-
+            
             services.AddControllersWithViews(options =>
             {
                 var policy = new AuthorizationPolicyBuilder()
