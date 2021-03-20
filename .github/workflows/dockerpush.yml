@@ -19,9 +19,9 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore
       - name: Build All
-        run: dotnet build
+        run: dotnet build --no-restore
       - name: Test
-        run: dotnet test
+        run: dotnet test --no-restore --no-build
   test:
     needs: build
     runs-on: ubuntu-latest
