@@ -1,30 +1,35 @@
 name: Docker
 on:
   push:
-    # Publish `master` as Docker `latest` image.
     branches:
       - master
-    # Publish `v1.2.3` tags as releases.
     tags:
       - v*
-  # Run tests for any PRs.
   pull_request:
 env:
-  # TODO: Change variable to your image's name.
   IMAGE_NAME: tweety
 jobs:
-  # Run tests.
-  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.x.x'
+      - name: Restore Dependencies
+        run: dotnet restore
+      - name: Build All
+        run: dotnet build
+      - name: Test
+        run: dotnet test
   test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run tests
         run: docker build . --file Dockerfile
-  # Push image to GitHub Package Registry.
-  # See also https://docs.docker.com/docker-hub/builds/
   push:
-    # Ensure test job passes before pushing image.
     needs: test
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
