@@ -9,7 +9,7 @@ on:
 env:
   IMAGE_NAME: tweety
 jobs:
-  build:
+  build_test:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -22,15 +22,10 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-restore --no-build
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run tests
-        run: docker build . --file Dockerfile
+      - name: Docker build
+        run: docker build . --file Dockerfile      
   push:
-    needs: test
+    needs: build_test
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
