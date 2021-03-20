@@ -32,7 +32,7 @@ namespace TweetyCore.Utils.StringMatcher
 
         public int Solve(string input, string keyword)
         {
-            if (string.IsNullOrEmpty(input) || string.IsNullOrEmpty(keyword))
+            if (string.IsNullOrWhiteSpace(input) || string.IsNullOrWhiteSpace(keyword))
             {
                 return -1;
             }

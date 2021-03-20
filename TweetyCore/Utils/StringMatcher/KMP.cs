@@ -46,52 +46,43 @@ namespace TweetyCore.Utils.StringMatcher
 
         public int Solve(string input, string keyword)
         {
-            if (input.Length == 0)
+            if (string.IsNullOrWhiteSpace(input) || string.IsNullOrWhiteSpace(keyword))
             {
-                _logger.LogWarning("No Input");
-                return -2;
-            }
-            else if (keyword.Length == 0)
-            {
-                _logger.LogWarning("No Keyword");
-                return -3;
-            }
-            else
-            {
-                _input = input.ToLower();
-                _keyword = keyword.ToLower();
-                //init borderfunction
-                InitBorderFunction();
-
-                //progress to solving
-                int n = _input.Length;
-                int m = _keyword.Length;
-
-                int i = 0;
-                int j = 0;
-
-                while (i < n)
-                {
-                    if (_keyword[j] == _input[i])
-                    {
-                        if (j == m - 1)
-                        {
-                            return i - m + 1;
-                        }
-                        i++;
-                        j++;
-                    }
-                    else if (j > 0)
-                    {
-                        j = _borderFunction[j];
-                    }
-                    else
-                    {
-                        i++;
-                    }
-                }
                 return -1;
             }
+            _input = input.ToLower();
+            _keyword = keyword.ToLower();
+            //init borderfunction
+            InitBorderFunction();
+
+            //progress to solving
+            int n = _input.Length;
+            int m = _keyword.Length;
+
+            int i = 0;
+            int j = 0;
+
+            while (i < n)
+            {
+                if (_keyword[j] == _input[i])
+                {
+                    if (j == m - 1)
+                    {
+                        return i - m + 1;
+                    }
+                    i++;
+                    j++;
+                }
+                else if (j > 0)
+                {
+                    j = _borderFunction[j];
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return -1;
         }
     }
 }

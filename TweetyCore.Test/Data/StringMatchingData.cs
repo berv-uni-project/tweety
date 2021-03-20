@@ -14,6 +14,11 @@ namespace TweetyCore.Test.Data
             yield return new object[] { "Bervianto Leo Pratama", "via", 3 };
             yield return new object[] { "Bervianto Leo Pratama", "aseng", -1 };
             yield return new object[] { "Bervianto Leo Pratama", "saha", -1 };
+            yield return new object[] { "", "", -1 };
+            yield return new object[] { "Hello World!", "", -1 };
+            yield return new object[] { "", "Wutt", -1 };
+            yield return new object[] { "shorter", "I'm longer thooo", -1 };
+            yield return new object[] { "suply", "suply...", -1 };
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
