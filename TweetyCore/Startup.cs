@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,9 +50,13 @@ namespace TweetyCore
             services.AddSwaggerGen();
 
             services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-               .AddMicrosoftIdentityWebApp(Configuration);
+               .AddMicrosoftIdentityWebApp(Configuration.GetSection("AzureAD"))
+               .EnableTokenAcquisitionToCallDownstreamApi()
+               .AddInMemoryTokenCaches();
 
-            services.AddAuthentication().AddMicrosoftIdentityWebApi(Configuration);
+            services.AddAuthentication()
+                .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAD"), JwtBearerDefaults.AuthenticationScheme)
+                .EnableTokenAcquisitionToCallDownstreamApi();
 
             services.AddControllersWithViews(options =>
             {
