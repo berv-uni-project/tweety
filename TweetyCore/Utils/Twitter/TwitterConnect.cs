@@ -15,7 +15,7 @@ namespace TweetyCore.Utils.Twitter
 {
     public class TwitterConnect : ITwitterConnect
     {
-        private readonly TweetResult _tweetResults = new TweetResult
+        private readonly TweetResult _tweetResults = new()
         {
             Query = new List<QueryCategory>()
             {
@@ -81,7 +81,7 @@ namespace TweetyCore.Utils.Twitter
 
         public async Task<TweetResponse> ProcessTag(Tags tags)
         {
-            int sumOfTweets = await _ParseTag(tags);
+            int sumOfTweets = await ParseTag(tags);
             _logger.LogInformation($"Sum of Tweets: {sumOfTweets}");
             return new TweetResponse()
             {
@@ -91,7 +91,7 @@ namespace TweetyCore.Utils.Twitter
         }
 
         #region Private Methods    
-        private async Task<int> _ParseTag(Tags tag)
+        private async Task<int> ParseTag(Tags tag)
         {
             int sumOfTweet = 0;
             var tweets = await _twitterClient.Search.SearchTweetsAsync(new SearchTweetsParameters(tag.Name)
@@ -100,7 +100,7 @@ namespace TweetyCore.Utils.Twitter
             });
             if (tweets != null)
             {
-                sumOfTweet = tweets.Count();
+                sumOfTweet = tweets.Length;
                 _categorized = new bool[sumOfTweet];
                 for (int i = 0; i < sumOfTweet; i++)
                 {
@@ -133,14 +133,14 @@ namespace TweetyCore.Utils.Twitter
 
                     if (keywords != null && keywords != "")
                     {
-                        _GetQuery(category, tweets, keywords, tag.IsKMP.GetValueOrDefault());
+                        GetQuery(category, tweets, keywords, tag.IsKMP.GetValueOrDefault());
                     }
                 }
                 for (int j = 0; j < sumOfTweet; j++)
                 {
                     if (!_categorized[j])
                     {
-                        HasilTweet hasilTemp = new HasilTweet
+                        HasilTweet hasilTemp = new()
                         {
                             TweetContent = tweets.ElementAt(j),
                             Result = tweets.ElementAt(j).Text
@@ -152,7 +152,7 @@ namespace TweetyCore.Utils.Twitter
             return sumOfTweet;
         }
 
-        private void _GetQuery(QueryCategory category, IEnumerable<ITweet> tweets, string keywords, bool isKMP)
+        private void GetQuery(QueryCategory category, IEnumerable<ITweet> tweets, string keywords, bool isKMP)
         {
             string[] keywordsArray = keywords.Split(",");
             int i = 0;
@@ -181,7 +181,7 @@ namespace TweetyCore.Utils.Twitter
                 }
                 if (cats > 0)
                 {
-                    HasilTweet hasil = new HasilTweet
+                    HasilTweet hasil = new()
                     {
                         TweetContent = tweet,
                         Result = newText
