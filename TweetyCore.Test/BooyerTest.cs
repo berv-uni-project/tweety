@@ -12,12 +12,10 @@ namespace TweetyCore.Test
         [ClassData(typeof(StringMatchingData))]
         public void StringMatchingTest(string longString, string keyword, int expectedResult)
         {
-            using (var mock = AutoMock.GetLoose())
-            {
-                var booyer = mock.Create<Booyer>();
-                var result = booyer.Solve(longString, keyword);
-                Assert.Equal(expectedResult, result);
-            }
+            using var mock = AutoMock.GetLoose();
+            var booyer = mock.Create<Booyer>();
+            var result = booyer.Solve(longString, keyword);
+            Assert.Equal(expectedResult, result);
         }
     }
 }
