@@ -96,7 +96,7 @@ namespace TweetyCore.Utils.Twitter
             int sumOfTweet = 0;
             var tweets = await _twitterClient.Search.SearchTweetsAsync(new SearchTweetsParameters(tag.Name)
             {
-                PageSize = 100
+                PageSize = 500,
             });
             if (tweets != null)
             {
