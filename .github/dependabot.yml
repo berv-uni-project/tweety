@@ -1,0 +1,16 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "08:00"
+    timezone: Asia/Jakarta
+  open-pull-requests-limit: 75
+  ignore:
+  - dependency-name: NLog.Web.AspNetCore
+    versions:
+    - 4.12.0
+  - dependency-name: Microsoft.VisualStudio.Web.CodeGeneration.Design
+    versions:
+    - 5.0.2
