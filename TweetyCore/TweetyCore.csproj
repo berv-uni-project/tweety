@@ -24,7 +24,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.6" />
     <PackageReference Include="Microsoft.Identity.Web" Version="1.10.0" />
-    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.9.2" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.10.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog" Version="4.7.10" />
