@@ -22,6 +22,14 @@ jobs:
         run: dotnet build --no-restore --configuration Release
       - name: Test
         run: dotnet test --no-restore --no-build --configuration Release
+  docker_test:
+    runs-on: ubuntu-20.04
+    needs: build_test
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Image
+        run: docker build . -t $IMAGE_NAME
   build_push_image:
     runs-on: ubuntu-20.04
     if: github.event_name == 'push'
@@ -44,7 +52,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            bervproject/${{ env.IMAGE_NAME }}
+            berviantoleo/${{ env.IMAGE_NAME }}
             ghcr.io/${{ github.repository }}
       - name: Build and push Docker images
         uses: docker/build-push-action@v2
