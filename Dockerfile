@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine as build
 WORKDIR /app
-COPY . .
+COPY TweetyCore .
 RUN dotnet restore
 RUN dotnet publish -c Release -o /app/publish
 
