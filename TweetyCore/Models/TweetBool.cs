@@ -4,10 +4,6 @@ namespace TweetyCore.Models
 {
     public class TweetBool
     {
-        public TweetBool(ITweet tweet)
-        {
-            Tweet = tweet;
-        }
 
         public TweetBool(ITweet tweet, bool categorized)
         {
