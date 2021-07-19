@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Tweety.Models;
 using TweetyCore.Models;
 
 namespace TweetyCore.Utils.Twitter

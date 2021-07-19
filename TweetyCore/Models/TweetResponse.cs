@@ -1,5 +1,4 @@
-﻿using Tweety.Models;
-
+﻿
 namespace TweetyCore.Models
 {
     public class TweetResponse

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Tweety.Models
+namespace TweetyCore.Models
 {
     public class Tags
     {

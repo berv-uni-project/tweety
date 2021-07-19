@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Tweetinvi.Models;
 
-namespace Tweety.Models
+namespace TweetyCore.Models
 {
     public class HasilTweet
     {

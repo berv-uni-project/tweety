@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Tweety.Models;
 using TweetyCore.Models;
 using TweetyCore.Utils.Twitter;
 

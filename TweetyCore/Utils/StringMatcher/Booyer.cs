@@ -5,7 +5,6 @@ namespace TweetyCore.Utils.StringMatcher
 {
     public class Booyer : IBooyer
     {
-        private int[] _last;
         private const int _maxEmoticon = 128;
         private readonly ILogger<Booyer> _logger;
 
@@ -14,20 +13,22 @@ namespace TweetyCore.Utils.StringMatcher
             _logger = logger;
         }
 
-        private void InitLast(string keyword)
+        private int[] InitLast(string keyword)
         {
             _logger.LogInformation("Setup Last");
-            _last = new int[_maxEmoticon];
+            var last = new int[_maxEmoticon];
 
             for (int i = 0; i < _maxEmoticon; i++)
             {
-                _last[i] = -1;
+                last[i] = -1;
             }
 
             for (int i = 0; i < keyword.Length; i++)
             {
-                _last[keyword[i]] = i;
+                last[keyword[i]] = i;
             }
+
+            return last;
         }
 
         public int Solve(string input, string keyword)
@@ -38,7 +39,7 @@ namespace TweetyCore.Utils.StringMatcher
             }
             var _input = input.ToLower();
             var _keyword = keyword.ToLower();
-            InitLast(_keyword);
+            var last = InitLast(_keyword);
             int n = _input.Length;
             int m = _keyword.Length;
             int i = m - 1;
@@ -68,7 +69,7 @@ namespace TweetyCore.Utils.StringMatcher
                     int lo;
                     if (!(_input[i] > 128 || _input[i] < 0))
                     {
-                        lo = _last[_input[i]];
+                        lo = last[_input[i]];
                     }
                     else
                     {

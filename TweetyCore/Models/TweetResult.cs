@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace Tweety.Models
+namespace TweetyCore.Models
 {
     public class TweetResult
     {
-        public List<QueryCategory> Query { get; set; }
+        public List<IQueryCategory> Query { get; set; }
     }
 }
