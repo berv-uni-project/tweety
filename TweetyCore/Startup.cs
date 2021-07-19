@@ -15,6 +15,7 @@ using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using System;
 using Tweetinvi;
+using TweetyCore.ConfigModel;
 using TweetyCore.EntityFramework;
 using TweetyCore.Utils.StringMatcher;
 using TweetyCore.Utils.Twitter;
@@ -42,6 +43,9 @@ namespace TweetyCore
 
             services.AddDbContext<TweetyDbContext>(options => options.UseSqlite("tweety.db"));
 
+            var twitterConfig = new TwitterConfig();
+            Configuration.GetSection("Twitter").Bind(twitterConfig);
+            services.AddSingleton(twitterConfig);
             // register the scope authorization handler
             services.AddScoped<IKMP, KMP>();
             services.AddScoped<IBooyer, Booyer>();
