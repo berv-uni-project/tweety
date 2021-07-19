@@ -16,6 +16,7 @@ namespace TweetyCore.Controllers
             _twitter = twitter;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
