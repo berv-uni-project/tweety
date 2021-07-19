@@ -56,7 +56,9 @@ namespace TweetyCore
 
             services.AddSwaggerGen();
 
-            services.AddMicrosoftIdentityWebAppAuthentication(Configuration, "AzureAD");
+            services.AddMicrosoftIdentityWebAppAuthentication(Configuration, "AzureAD")
+                .EnableTokenAcquisitionToCallDownstreamApi()
+                  .AddInMemoryTokenCaches();
 
             services.AddAuthentication()
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAD"), JwtBearerDefaults.AuthenticationScheme)
