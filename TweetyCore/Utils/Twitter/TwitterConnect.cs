@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -66,17 +65,14 @@ namespace TweetyCore.Utils.Twitter
 
         public TwitterConnect(ILogger<TwitterConnect> logger,
             IKMP kmp,
-            IBooyer booyer
+            IBooyer booyer,
+            ITwitterClient twitterClient
             )
         {
             _logger = logger;
             _kmp = kmp;
             _booyer = booyer;
-            string customer_key = Environment.GetEnvironmentVariable("CUSTOMER_KEY");
-            string customer_secret = Environment.GetEnvironmentVariable("CUSTOMER_SECRET");
-            string token = Environment.GetEnvironmentVariable("TOKEN");
-            string token_secret = Environment.GetEnvironmentVariable("TOKEN_SECRET");
-            _twitterClient = new TwitterClient(customer_key, customer_secret, token, token_secret);
+            _twitterClient = twitterClient;
         }
 
         public async Task<TweetResponse> ProcessTag(Tags tags)
@@ -101,11 +97,7 @@ namespace TweetyCore.Utils.Twitter
             if (tweets != null)
             {
                 sumOfTweet = tweets.Length;
-                _categorized = new bool[sumOfTweet];
-                for (int i = 0; i < sumOfTweet; i++)
-                {
-                    _categorized[i] = false;
-                }
+                _InitTweetStatus(sumOfTweet);
 
                 foreach (QueryCategory category in _tweetResults.Query)
                 {
@@ -189,6 +181,15 @@ namespace TweetyCore.Utils.Twitter
                     _tweetResults.Query.Find(q => q.Id == category.Id).Tweet.Add(hasil);
                 }
                 i++;
+            }
+        }
+
+        private void _InitTweetStatus(int sumOfTweets)
+        {
+            _categorized = new bool[sumOfTweets];
+            for (int i = 0; i < sumOfTweets; i++)
+            {
+                _categorized[i] = false;
             }
         }
         #endregion

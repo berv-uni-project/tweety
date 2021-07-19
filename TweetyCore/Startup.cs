@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using System;
+using Tweetinvi;
 using TweetyCore.EntityFramework;
 using TweetyCore.Utils.StringMatcher;
 using TweetyCore.Utils.Twitter;
@@ -44,6 +45,7 @@ namespace TweetyCore
             // register the scope authorization handler
             services.AddScoped<IKMP, KMP>();
             services.AddScoped<IBooyer, Booyer>();
+            services.AddScoped<ITwitterClient, TwitterConsumer>();
             services.AddScoped<ITwitterConnect, TwitterConnect>();
 
             services.AddCors();
