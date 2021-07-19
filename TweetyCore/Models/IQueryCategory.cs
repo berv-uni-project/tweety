@@ -7,6 +7,5 @@ namespace TweetyCore.Models
         public string Id { get; }
         public string Name { get; }
         public List<HasilTweet> Tweet { get; }
-        public int Num { get; set; }
     }
 }
