@@ -14,7 +14,7 @@ namespace TweetyCore.Utils.Twitter
     {
         private readonly TweetResult _tweetResults = new()
         {
-            Query = new List<IQueryCategory>()
+            Query = new List<IQueryCategory>
             {
                 new DinkesCategory(),
                 new DinBimarCategory(),
@@ -95,7 +95,7 @@ namespace TweetyCore.Utils.Twitter
                     }
                 }
 
-                var uncategorized = boolTweets.Where(x => !x.Categorized).Select(x => new HasilTweet() { TweetContent = x.Tweet, Result = x.Tweet.Text });
+                var uncategorized = boolTweets.Where(x => !x.Categorized).Select(x => new HasilTweet { TweetContent = x.Tweet, Result = x.Tweet.Text });
                 _tweetResults.Query.Find(query => query.Id == CategoryConstants.Id.NoCategory).Tweet.AddRange(uncategorized);
             }
             return sumOfTweet;
