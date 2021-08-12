@@ -33,6 +33,23 @@ namespace TweetyCore.Test.Controllers
         }
 
         [Fact]
+        public async Task BadRequestIndexPostTest()
+        {
+            using var mock = AutoMock.GetLoose();
+            var twitterConnect = mock.Mock<ITwitterConnect>();
+            var homeController = mock.Create<HomeController>();
+            var request = new Models.Tags()
+            {
+                Name = null,
+                IsKMP = null
+            };
+            homeController.ModelState.AddModelError("Name", "Name is Required");
+            var response = await homeController.Index(twitterConnect.Object, request);
+            var viewResult = Assert.IsType<ViewResult>(response);
+            Assert.Null(viewResult.ViewName);
+        }
+
+        [Fact]
         public async Task CheckReturnTypeIndexPostNotGettingResult()
         {
             using var mock = AutoMock.GetLoose();

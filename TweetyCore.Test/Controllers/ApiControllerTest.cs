@@ -11,6 +11,23 @@ namespace TweetyCore.Test.Controllers
 {
     public class ApiControllerTest
     {
+
+        [Fact]
+        public async Task BadRequestTest()
+        {
+            using var mock = AutoMock.GetLoose();
+            var twitterConnect = mock.Mock<ITwitterConnect>();
+            var apiController = mock.Create<ApiController>();
+            var request = new Models.Tags()
+            {
+                Name = null,
+                IsKMP = null
+            };
+            apiController.ModelState.AddModelError("Name", "Name is Required");
+            var response = await apiController.Index(request);
+            Assert.IsType<BadRequestResult>(response);
+        }
+
         [Fact]
         public async Task NoDataReturn()
         {
