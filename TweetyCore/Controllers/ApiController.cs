@@ -21,7 +21,7 @@ namespace TweetyCore.Controllers
         }
 
         [HttpPost("find")]
-        public async Task<ActionResult> Index([FromBody] Tags requestBody)
+        public async Task<IActionResult> Index([FromBody] Tags requestBody)
         {
             if (ModelState.IsValid)
             {
