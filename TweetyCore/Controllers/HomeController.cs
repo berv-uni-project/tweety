@@ -10,10 +10,8 @@ namespace TweetyCore.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly ITwitterConnect _twitter;
-        public HomeController(ITwitterConnect twitter)
+        public HomeController()
         {
-            _twitter = twitter;
         }
 
         [AllowAnonymous]
@@ -29,11 +27,11 @@ namespace TweetyCore.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Index(Tags tags)
+        public async Task<IActionResult> Index([FromServices] ITwitterConnect twitter, Tags tags)
         {
             if (ModelState.IsValid)
             {
-                var result = await _twitter.ProcessTag(tags);
+                var result = await twitter.ProcessTag(tags);
                 if (result.Count > 0)
                 {
                     return View("ShowResult", result.Data);
