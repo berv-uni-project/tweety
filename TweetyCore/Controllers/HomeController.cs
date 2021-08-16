@@ -15,18 +15,20 @@ namespace TweetyCore.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet("/")]
         public IActionResult Index()
         {
             return View();
         }
 
         [AllowAnonymous]
+        [HttpGet("About")]
         public IActionResult About()
         {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("/")]
         public async Task<IActionResult> Index([FromServices] ITwitterConnect twitter, Tags tags)
         {
             if (ModelState.IsValid)
