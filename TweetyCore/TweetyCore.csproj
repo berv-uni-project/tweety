@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <UserSecretsId>6beb4f14-be44-4fc5-bea1-822bec2bbbbc</UserSecretsId>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
