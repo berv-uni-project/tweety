@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TweetyCore.Utils;
+﻿using TweetyCore.Utils;
 
 namespace TweetyCore.Models
 {

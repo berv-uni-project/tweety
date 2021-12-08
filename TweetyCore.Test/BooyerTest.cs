@@ -1,5 +1,4 @@
 using Autofac.Extras.Moq;
-using System;
 using TweetyCore.Test.Data;
 using TweetyCore.Utils.StringMatcher;
 using Xunit;

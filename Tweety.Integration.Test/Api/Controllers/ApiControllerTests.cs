@@ -2,7 +2,6 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Tweety.Integration.Test.Factory;
-using TweetyCore;
 using TweetyCore.Models;
 using Xunit;
 

@@ -30,7 +30,7 @@ namespace TweetyCore.Test
                 DinasPendidikan = "ridwan",
                 DinasSosial = "kamil"
             };
-            
+
             using var mock = AutoMock.GetLoose();
             var twitterClientMock = mock.Mock<ITwitterClient>();
             var twitterClientFactoryMock = mock.Mock<ITwitterClientFactories>();

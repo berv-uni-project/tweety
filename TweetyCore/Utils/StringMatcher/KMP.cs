@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace TweetyCore.Utils.StringMatcher
+﻿namespace TweetyCore.Utils.StringMatcher
 {
     public class KMP : IKMP
     {

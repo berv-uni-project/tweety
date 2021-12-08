@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
-
-namespace TweetyCore.Utils.StringMatcher
+﻿namespace TweetyCore.Utils.StringMatcher
 {
     public class Booyer : IBooyer
     {

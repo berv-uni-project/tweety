@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TweetyCore.Models
+﻿namespace TweetyCore.Models
 {
     public class TweetResult
     {
