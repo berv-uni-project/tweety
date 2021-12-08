@@ -1,50 +1,107 @@
 ﻿using Autofac.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.UI;
 using NLog.Web;
 using System;
+using Tweetinvi;
+using TweetyCore.ConfigModel;
+using TweetyCore.EntityFramework;
+using TweetyCore.Utils.StringMatcher;
+using TweetyCore.Utils.Twitter;
 
-namespace TweetyCore
+var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureLogging(logging =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            // NLog: setup the logger first to catch all errors
-            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
-            try
-            {
-                logger.Debug("init main");
-                CreateHostBuilder(args).Build().Run();
-            }
-            catch (Exception ex)
-            {
-                //NLog: catch setup errors
-                logger.Error(ex, "Stopped program because of exception");
-                throw;
-            }
-            finally
-            {
-                // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
-                NLog.LogManager.Shutdown();
-            }
-        }
+    logging.ClearProviders();
+    logging.SetMinimumLevel(LogLevel.Trace);
+    logging.AddNLog("Nlog.config");
+    logging.AddNLogWeb();
+});
+builder.Host.UseNLog();
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-            .UseServiceProviderFactory(new AutofacServiceProviderFactory())
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder
-                .ConfigureLogging(logging =>
-                {
-                    logging.ClearProviders();
-                    logging.SetMinimumLevel(LogLevel.Trace);
-                })
-                .UseNLog()
-                .UseStartup<Startup>();
-                // NLog: setup NLog for Dependency injection
-            });
-    }
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+});
+
+builder.Services.AddDbContext<TweetyDbContext>(options => options.UseSqlite("tweety.db"));
+
+var twitterConfig = new TwitterConfig();
+builder.Configuration.GetSection("Twitter").Bind(twitterConfig);
+builder.Services.AddSingleton(twitterConfig);
+// register the scope authorization handler
+builder.Services.AddScoped<IKMP, KMP>();
+builder.Services.AddScoped<IBooyer, Booyer>();
+builder.Services.AddScoped<ITwitterClient, TwitterConsumer>();
+builder.Services.AddScoped<ITwitterConnect, TwitterConnect>();
+
+builder.Services.AddCors();
+
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddMicrosoftIdentityWebAppAuthentication(builder.Configuration, "AzureAD")
+    .EnableTokenAcquisitionToCallDownstreamApi()
+      .AddInMemoryTokenCaches();
+
+builder.Services.AddAuthentication()
+    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAD"), JwtBearerDefaults.AuthenticationScheme)
+    .EnableTokenAcquisitionToCallDownstreamApi();
+
+builder.Services.AddControllersWithViews(options =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+    options.Filters.Add(new AuthorizeFilter(policy));
+}).AddMicrosoftIdentityUI();
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
+
+var app = builder.Build();
+
+app.UseForwardedHeaders();
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                     "WebApp1 v1"));
 }
+else
+{
+    app.UseHsts();
+}
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseCookiePolicy();
+var corsAllow = Environment.GetEnvironmentVariable("CORS_ALLOW") ?? "*";
+app.UseCors(builder => builder.WithOrigins(corsAllow).AllowAnyHeader());
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapDefaultControllerRoute();
+});
+
+app.Run();
+
+public partial class Program { }

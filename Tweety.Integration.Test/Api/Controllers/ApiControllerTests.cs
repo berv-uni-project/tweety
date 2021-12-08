@@ -8,9 +8,9 @@ using Xunit;
 
 namespace Tweety.Integration.Test.Api.Controllers
 {
-    public class ApiControllerTests : IClassFixture<ApiQueryTestApplicationFactory<Startup>>
+    public class ApiControllerTests : IClassFixture<ApiQueryTestApplicationFactory<Program>>
     {
-        private readonly ApiQueryTestApplicationFactory<Startup> _factory;
+        private readonly ApiQueryTestApplicationFactory<Program> _factory;
         private readonly HttpClient _httpClient;
         private readonly Tags _defaultRequest = new()
         {
@@ -23,7 +23,7 @@ namespace Tweety.Integration.Test.Api.Controllers
             DinasPendidikan = "jabar"
         };
 
-        public ApiControllerTests(ApiQueryTestApplicationFactory<Startup> factory)
+        public ApiControllerTests(ApiQueryTestApplicationFactory<Program> factory)
         {
             _factory = factory;
             _httpClient = _factory.CreateClient();
