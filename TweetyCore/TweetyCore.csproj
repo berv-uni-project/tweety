@@ -30,7 +30,7 @@
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.7" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="NLog" Version="5.0.1" />
-		<PackageReference Include="NLog.Web.AspNetCore" Version="5.0.0" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.1.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.2" />
 		<PackageReference Include="TweetinviAPI" Version="5.0.4" />
 	</ItemGroup>
