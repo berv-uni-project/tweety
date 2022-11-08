@@ -10,13 +10,13 @@ env:
   IMAGE_NAME: tweety
 jobs:
   build_test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: "6.0.x"
-          include-prerelease: true
+          dotnet-version: "7.0.x"
+          dotnet-quality: "preview"
       - name: Restore Dependencies
         run: dotnet restore
       - name: Build All
@@ -24,7 +24,7 @@ jobs:
       - name: Test
         run: dotnet test --no-restore --no-build --configuration Release
   docker_test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: build_test
     if: github.event_name == 'pull_request'
     steps:
@@ -32,7 +32,7 @@ jobs:
       - name: Build Image
         run: docker build . -t $IMAGE_NAME
   build_push_image:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.event_name == 'push'
     needs: build_test
     steps:
